@@ -1,5 +1,5 @@
 import React, { Component, useState, useEffect } from "react";
-import actions from "../../api/index";
+import actions from "../api/index";
 
 const Home = (props) => {
   let [fruit, setFruit] = useState("kiwi");
