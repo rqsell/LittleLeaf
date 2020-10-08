@@ -8,10 +8,6 @@ const Home = (props) => {
     setFruit("passion fruit");
   }, []);
 
-  const changeFruit = () => {
-    setFruit("pineapple");
-  };
-
   return (
     <div>
       <header class="headerTotal">

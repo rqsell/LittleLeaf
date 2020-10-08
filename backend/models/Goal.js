@@ -5,11 +5,10 @@ const goalSchema = new Schema(
     startDate: { type: Date, default: Date.now },
     endDate: { type: Date, default: Date.now },
     description: String,
-    status: {
-      required: true,
-      type: String,
-      enum: ["incomplete", "in progress", "complete"],
-    },
+    // status: {
+    //   type: String,
+    //   enum: ["incomplete", "in progress", "complete"],
+    // },
     userId: {
       type: Schema.Types.ObjectId,
       ref: "User",
@@ -28,4 +27,4 @@ const goalSchema = new Schema(
   }
 );
 
-module.exports = model("User", userSchema);
+module.exports = model("Goal", goalSchema);
