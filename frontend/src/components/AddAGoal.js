@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import Button from "react-bootstrap/Button";
+import React, { useState } from "react";
+// import axios from "axios";
+// import Button from "react-bootstrap/Button";
 import Dropdown from "react-bootstrap/Dropdown";
-import Form from 'react-bootstrap/Form'
+// import Form from 'react-bootstrap/Form'
 import actions from "../api";
 
 function AddAGoal(props) {
@@ -29,61 +29,84 @@ function AddAGoal(props) {
   }
   return (
     <div>
-      {/* <form onSubmit={handleSubmit} style={{ padding: "80px" }}>
-        <label for="Name"> Name</label>
+      <form onSubmit={handleSubmit} style={{ padding: "80px" }} class="vanillaForm">
+        <label for="Name">Goal Name</label>
         <input
           onChange={(e) => setName(e.target.value)}
           type="text"
           name="Name"
         />
 
-        <label for="Start Date"> Start Date </label>
+        <label for="Start Date">Goal Start Date </label>
         <input
           onChange={(e) => setStart(e.target.value)}
           type="text"
           name="Start"
         />
 
-        <label for="End Date"> End Date</label>
+        <label for="End Date">Goal Due Date</label>
         <input
           onChange={(e) => setEnd(e.target.value)}
           type="text"
           name="End"
         />
 
-        <label for="Description"> Description </label>
+        <label for="Description">Description</label>
         <input
           onChange={(e) => setDescription(e.target.value)}
           type="text"
           name="Description"
-        /> */}
-        <Form class="addGoalForm">
+        />
+        <br/>
+        {/* <label>Set Status</label> */}
+        <select name="status" onChange={(e) => setStatus(e.target.value)} >
+          <option>Set Status...</option>
+          <option>Incomplete</option>
+          <option>In Progress</option>
+          <option>Complete</option>
+        </select>
+        <br/>
+        <button id="addGoalButton">Add Goal</button>
+      </form>
+    </div>
+  );
+}
+
+
+
+
+
+
+ {/* <Form class="addGoalForm">
         
           <Form.Group controlId="formName">
           <Form.Label>Goal Name:</Form.Label>
-          <Form.Control type="text" placeholder="Name Your Goal" />
+          <Form.Control type="text" placeholder="Name Your Goal" onChange={e.target.value} />
           <Form.Text className="text-muted">
               Be descriptive! (:
           </Form.Text>
           </Form.Group>
 
           <Form.Group controlId="formStartDate">
+          <Form.Control type="date" onChange={e.target.value} />
           <Form.Label>Goal Start Date:</Form.Label>
           <Form.Check type="date"/>
           </Form.Group>
 
           <Form.Group controlId="formEndDate">
+          <Form.Control type="date" onChange={e.target.value} />
           <Form.Label>Goal Due Date:</Form.Label>
           <Form.Check type="date" />
           </Form.Group>
 
           <Form.Group controlId="form.ControlTextarea1">
+          <Form.Control type="text" onChange={e.target.value} />
           <Form.Label>Description:</Form.Label>
           <Form.Control as="textarea" rows="3" placeholder="Tell us about your Goal! "/>
           </Form.Group>
 
           <Form.Group controlId="form.ControlTextarea1">      
-          <Form.Control as="select">
+          <Form.Control as="select" onChange>
             <option>Set Status...</option>
             <option>Incomplete</option>
             <option>In Progress</option>\
@@ -94,24 +117,22 @@ function AddAGoal(props) {
             <Button variant="primary" type="submit">
               Submit
             </Button>
-          </Form>
+          </Form> */}
 
         {/* <Dropdown>
           <Dropdown.Toggle variant="success" id="dropdown-basic">
             Status
           </Dropdown.Toggle>
-
-          <Dropdown.Menu>
+          <Dropdown.Menu onChange={e.target.value}>
             <Dropdown.Item href="#/action-1">Incomplete</Dropdown.Item>
             <Dropdown.Item href="#/action-2">In progress</Dropdown.Item>
             <Dropdown.Item href="#/action-3">Complete</Dropdown.Item>
           </Dropdown.Menu>
-        </Dropdown>
+        </Dropdown> */}
 
-        <button>Add Goal</button> */}
-      {/* </form> */}
-    </div>
-  );
-}
+
 
 export default AddAGoal;
+
+
+
