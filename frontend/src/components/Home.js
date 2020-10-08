@@ -1,12 +1,12 @@
-import React, { Component, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import actions from "../api/index";
 
 const Home = (props) => {
-  let [fruit, setFruit] = useState("kiwi");
+  // let [fruit, setFruit] = useState("kiwi");
 
-  useEffect(() => {
-    setFruit("passion fruit");
-  }, []);
+  // useEffect(() => {
+  //   setFruit("passion fruit");
+  // }, []);
 
   return (
     <div>
