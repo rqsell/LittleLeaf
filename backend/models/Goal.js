@@ -5,10 +5,10 @@ const goalSchema = new Schema(
     startDate: { type: Date, default: Date.now },
     endDate: { type: Date, default: Date.now },
     description: String,
-    // status: {
-    //   type: String,
-    //   enum: ["incomplete", "in progress", "complete"],
-    // },
+    status: {
+      type: String,
+      enum: ["Incomplete", "In Progress", "Complete"],
+    },
     userId: {
       type: Schema.Types.ObjectId,
       ref: "User",
