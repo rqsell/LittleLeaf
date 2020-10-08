@@ -9,6 +9,7 @@ import Profile from "./components/profile/Profile";
 import actions from "./api/index";
 import GoogleAuth from "./components/auth/GoogleAuth";
 import GoogleAuthLogin from "./components/auth/GoogleAuthLogin";
+import "bootstrap/dist/css/bootstrap.min.css";
 import {
   NotificationContainer,
   NotificationManager,

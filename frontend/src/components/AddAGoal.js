@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Button from "react-bootstrap/Button";
+import Dropdown from "react-bootstrap/Dropdown";
 
 function AddAGoal(props) {
   const [name, setName] = useState("");
@@ -51,19 +53,17 @@ function AddAGoal(props) {
           type="text"
           name="Description"
         />
+        <Dropdown>
+          <Dropdown.Toggle variant="success" id="dropdown-basic">
+            Status
+          </Dropdown.Toggle>
 
-        <label for="Status">Status</label>
-        <select
-          id="option"
-          name="option"
-          size="3"
-          onChange={(e) => setStatus(e.target.value)}
-          multiple
-        >
-          <option value="incomplete">Incomplete</option>
-          <option value="inprogress">In progress</option>
-          <option value="complete">Complete</option>
-        </select>
+          <Dropdown.Menu>
+            <Dropdown.Item href="#/action-1">Incomplete</Dropdown.Item>
+            <Dropdown.Item href="#/action-2">In progress</Dropdown.Item>
+            <Dropdown.Item href="#/action-3">Complete</Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown>
 
         <button>Add Goal</button>
       </form>
