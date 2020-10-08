@@ -10,6 +10,7 @@ import actions from "./api/index";
 import GoogleAuth from "./components/auth/GoogleAuth";
 import GoogleAuthLogin from "./components/auth/GoogleAuthLogin";
 import "bootstrap/dist/css/bootstrap.min.css";
+import AddATask from "./components/AddATask";
 // import "bootstrap/scss/bootstrap";
 import {
   NotificationContainer,
@@ -49,12 +50,11 @@ const App = () => {
             <NavLink to="/profile">Profile</NavLink>
           </Fragment>
         ) : (
-          <Fragment>
-            <NavLink to="/sign-up">Sign Up</NavLink>
-            <NavLink to="/log-in">Log In</NavLink>
-            
-          </Fragment>
-        )}
+            <Fragment>
+              <NavLink to="/sign-up">Sign Up</NavLink>
+              <NavLink to="/log-in">Log In</NavLink>
+            </Fragment>
+          )}
       </nav>
       <Switch>
         <Route exact path="/" render={(props) => <Home {...props} />} />
@@ -77,6 +77,12 @@ const App = () => {
           exact
           path="/AddAGoal"
           render={(props) => <AddAGoal {...props} />}
+        />
+
+        <Route
+          exact
+          path="/AddATask"
+          render={(props) => <AddATask {...props} />}
         />
 
         <Route component={NotFound} />
