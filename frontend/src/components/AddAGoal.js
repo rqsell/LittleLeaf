@@ -3,6 +3,7 @@ import axios from "axios";
 import Button from "react-bootstrap/Button";
 import Dropdown from "react-bootstrap/Dropdown";
 import Form from 'react-bootstrap/Form'
+import actions from "../api";
 
 function AddAGoal(props) {
   const [name, setName] = useState("");
@@ -13,7 +14,9 @@ function AddAGoal(props) {
   //
   async function handleSubmit(e) {
     e.preventDefault();
-    let res = await axios.post(`http://localhost:5000/AddAGoal`, {
+    // let res = await axios.post(`http://localhost:5000/api/AddAGoal`, {
+    console.log(status);
+    let res = await actions.addapost({
       name,
       start,
       end,
@@ -21,7 +24,7 @@ function AddAGoal(props) {
       status,
     });
     console.log(res);
-    console.log(props);
+    // console.log(props);
     // props.history.push("/movies"); // Go back to whatever route you give inside the parentheses
   }
   return (
