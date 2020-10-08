@@ -25,10 +25,20 @@ nav a {
   padding: 20px;
   margin: 5px;
 } */
+
 .logo {
-  height: 30vh;
+  height: 40vh;
   width: auto;
-  margin-left: 1.5vw;
+  position: absolute;
+  top: -90px;
+  /* margin-left: 1.5vw; */
+}
+#google-auth{
+  display: flex;
+  justify-content: center;
+  height: 10vh;
+  margin-top: 10vh;
+  margin-bottom: 5vh;
 }
 .headerTotal {
   display: flex;
@@ -77,37 +87,62 @@ nav a {
   font-family: "Baskervville", serif;
 }
 .homeIntro {
-  margin-left: 25vw;
+  /* margin-left: 25vw; */
+  text-align: center;
   color: rgb(77, 92, 77);
   font-family: "Baskervville", serif;
 }
+#homeIT1{
+  font-size: 34px;
+}
 #homeIT2 {
-  padding-left: 50px;
-  /* margin-top: -3%; */
+  padding-left: 140px;
+  font-size: 20px;
   font-family: "Open Sans", sans-serif;
 }
-/* .bodyText{
-    margin-bottom: 200px;
-} */
 .bigTreeClass {
   display: flex;
   justify-content: center;
-  margin-top: 80px;
+  margin-top: 40px;
 }
 .bigTreeImg {
-  height: 50vh;
+  height: 70vh;
   width: auto;
   /* margin-left: 10vw; */
 }
+.bodyText{
+  margin-top: 30px;
+  margin-left: 20vw;
+  text-align: center;
+  /* text-align: center; */
+  width: 60vw;
+}
+.bodyText h5 {
+  font-family: "Baskervville", serif;
+  color: rgb(77, 92, 77);
+}
+.bodyText h6 {
+  font-family: "Baskervville", serif;
+  color: rgb(77, 92, 77);
+}
+.bodyText p {
+  color: rgb(77, 92, 77);
+  font-family: "Open Sans", sans-serif;
+}
+.bodyTextP1{
+  font-size: 14px;
+}
+.bodyTextP2{
+  font-size: 14px;
+}
 footer {
-  margin-top: 200px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  margin-top: 100px;
+  
 }
 footer p {
   margin-top: -5px;
   color: rgb(77, 92, 77);
+  text-align: center;
 }
 body {
   font-family: "Open Sans", sans-serif;

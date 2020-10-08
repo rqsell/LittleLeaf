@@ -52,6 +52,7 @@ const App = () => {
           <Fragment>
             <NavLink to="/sign-up">Sign Up</NavLink>
             <NavLink to="/log-in">Log In</NavLink>
+            
           </Fragment>
         )}
       </nav>
@@ -80,8 +81,11 @@ const App = () => {
 
         <Route component={NotFound} />
       </Switch>
-      {!user && <GoogleAuth setUser={setUser} />}
-      {!user && <GoogleAuthLogin setUser={setUser} />}
+      <div id="google-auth">
+        {!user && <GoogleAuth setUser={setUser}  class="googleAuth"/>}
+        {!user && <GoogleAuthLogin setUser={setUser} class="googleAuth"/>}
+      </div>
+
 
       <NotificationContainer />
     </TheContext.Provider>
