@@ -2,8 +2,8 @@ const { Schema, model } = require("mongoose");
 const goalSchema = new Schema(
   {
     name: String,
-    startDate: { type: Date, default: Date.now }
-    endDate: { type: Date, default: Date.now }
+    startDate: { type: Date, default: Date.now },
+    endDate: { type: Date, default: Date.now },
     description: String,
     status: {
       required: true,
