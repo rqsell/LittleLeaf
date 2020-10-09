@@ -21,6 +21,10 @@
   "dependencies": {
     "bootstrap": "^4.5.2",
     "react-bootstrap": "^1.3.0",
+<<<<<<< HEAD
     "sweetalert": "^2.1.2"
+=======
+    "react-router-dom": "^5.2.0"
+>>>>>>> f7c06a387a6ff00da7a4e40740c994f14109ea14
   }
 }

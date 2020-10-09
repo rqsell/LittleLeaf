@@ -6,6 +6,7 @@ import NotFound from "./components/404/NotFound.js";
 import SignUp from "./components/auth/SignUp";
 import LogIn from "./components/auth/LogIn";
 import Profile from "./components/profile/Profile";
+import GoalDetails from "./components/GoalDetails";
 import actions from "./api/index";
 import GoogleAuth from "./components/auth/GoogleAuth";
 import GoogleAuthLogin from "./components/auth/GoogleAuthLogin";
@@ -51,11 +52,11 @@ const App = () => {
             <NavLink to="/profile">Profile</NavLink>
           </Fragment>
         ) : (
-            <Fragment>
-              <NavLink to="/sign-up">Sign Up</NavLink>
-              <NavLink to="/log-in">Log In</NavLink>
-            </Fragment>
-          )}
+          <Fragment>
+            <NavLink to="/sign-up">Sign Up</NavLink>
+            <NavLink to="/log-in">Log In</NavLink>
+          </Fragment>
+        )}
       </nav>
       
       <Switch>
@@ -80,6 +81,11 @@ const App = () => {
           path="/AddAGoal"
           render={(props) => <AddAGoal {...props} />}
         />
+        <Route
+          exact
+          path="/goals/:goalid"
+          render={(props) => <GoalDetails {...props} />}
+        />
 
         <Route
           exact
@@ -90,11 +96,9 @@ const App = () => {
         <Route component={NotFound} />
       </Switch>
       <div id="google-auth">
-        {!user && <GoogleAuth setUser={setUser}  class="googleAuth"/>}
-        {!user && <GoogleAuthLogin setUser={setUser} class="googleAuth"/>}
+        {!user && <GoogleAuth setUser={setUser} class="googleAuth" />}
+        {!user && <GoogleAuthLogin setUser={setUser} class="googleAuth" />}
       </div>
-      
-      
 
       <NotificationContainer />
     </TheContext.Provider>

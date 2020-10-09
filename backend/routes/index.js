@@ -9,5 +9,11 @@ router.get("/SeeGoals", (req, res) => {
     res.json(goals);
   });
 });
+// router.get("/SeeGoals:id", (req, res) => {
+//   console.log(req.params.id);
+//   Goals.findById(req.params.id).then((goal) => {
+//     res.json({ goal });
+//   });
+// });
 
 module.exports = router;
