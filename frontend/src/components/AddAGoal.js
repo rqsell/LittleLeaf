@@ -34,7 +34,7 @@ function AddAGoal(props) {
 
 
   return (
-    <div>
+    <div className="addAGoalDiv">
       <h4 class='goalsintro'>Welcome to your Goals page!</h4>
       <p class="goalsBio">Each goal you add and complete will take you closer to success! Each goal may be stand-alone, or may include several related tasks!  </p>
       <SeeGoal />

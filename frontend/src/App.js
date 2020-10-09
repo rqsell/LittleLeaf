@@ -7,6 +7,7 @@ import SignUp from "./components/auth/SignUp";
 import LogIn from "./components/auth/LogIn";
 import Profile from "./components/profile/Profile";
 import GoalDetails from "./components/GoalDetails";
+import AddAGoal from "./components/AddAGoal";
 import actions from "./api/index";
 import GoogleAuth from "./components/auth/GoogleAuth";
 import GoogleAuthLogin from "./components/auth/GoogleAuthLogin";
@@ -18,7 +19,7 @@ import {
   NotificationContainer,
   NotificationManager,
 } from "react-notifications";
-import AddAGoal from "./components/AddAGoal";
+
 const App = () => {
   let [user, setUser] = useState(null);
 
