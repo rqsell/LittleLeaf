@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import actions from "../api/index";
 import swal from 'sweetalert';
+import {Link} from 'react-router-dom'
 const Home = (props) => {
   const [open, setOpen] = useState(false);
 
@@ -20,8 +21,9 @@ const Home = (props) => {
           {open ? (
             <ul>
               <li>Home</li>
-              <li>Sign Up</li>
+              <Link to='/sign-up'><li>Sign Up</li></Link>
               <li>Log In</li>
+              <Link to="/AddAGoal"><li>Add A Goal</li></Link>
               <li>About Us</li>
               <li>Profile</li>
             </ul>
