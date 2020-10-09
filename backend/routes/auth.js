@@ -63,6 +63,18 @@ router.post("/AddAPost", verifyToken, (req, res) => {
   });
 });
 
+router.get("/GetAllGoal", verifyToken, (req, res, next) => {
+  jwt.verify(req.token, "secretkey", (err, authData) => {
+    if (err) {
+      res.status(403).json(err);
+    } else {
+      Goals.find({ userId: authData.user._id }).then((goals) => {
+        res.json({ goals });
+      })
+    }
+  })
+})
+
 function isAuth(req, res, next) {
   req.isAuthenticated()
     ? next()
