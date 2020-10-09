@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import actions from "../api/index";
-
+import swal from 'sweetalert';
 const Home = (props) => {
   // let [fruit, setFruit] = useState("kiwi");
 
@@ -10,6 +10,7 @@ const Home = (props) => {
 
   return (
     <div>
+      
       <header class="headerTotal">
         <nav>
           <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -55,6 +56,7 @@ const Home = (props) => {
         <p>Created by: Ashtyn Czapansky, Rebecca Sell, & Jada Woody</p>
         <p>Ironhack Class of Aug 2020</p>
       </footer>
+      {/* {swal("Your Goal has been added to your Big Tree Calendar!")} */}
     </div>
   );
 };
