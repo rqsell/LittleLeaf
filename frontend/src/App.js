@@ -11,6 +11,7 @@ import GoogleAuth from "./components/auth/GoogleAuth";
 import GoogleAuthLogin from "./components/auth/GoogleAuthLogin";
 import "bootstrap/dist/css/bootstrap.min.css";
 import AddATask from "./components/AddATask";
+import swal from 'sweetalert'
 // import "bootstrap/scss/bootstrap";
 import {
   NotificationContainer,
@@ -56,6 +57,7 @@ const App = () => {
             </Fragment>
           )}
       </nav>
+      
       <Switch>
         <Route exact path="/" render={(props) => <Home {...props} />} />
         <Route
@@ -91,7 +93,8 @@ const App = () => {
         {!user && <GoogleAuth setUser={setUser}  class="googleAuth"/>}
         {!user && <GoogleAuthLogin setUser={setUser} class="googleAuth"/>}
       </div>
-
+      
+      
 
       <NotificationContainer />
     </TheContext.Provider>
