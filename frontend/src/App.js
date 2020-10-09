@@ -41,23 +41,7 @@ const App = () => {
   return (
     <TheContext.Provider value={{ history, user, setUser }}>
       {user?.email}
-      <nav>
-        <NavLink to="/">Home</NavLink>
-
-        {user ? (
-          <Fragment>
-            <NavLink onClick={logOut} to="/">
-              Log Out
-            </NavLink>
-            <NavLink to="/profile">Profile</NavLink>
-          </Fragment>
-        ) : (
-          <Fragment>
-            <NavLink to="/sign-up">Sign Up</NavLink>
-            <NavLink to="/log-in">Log In</NavLink>
-          </Fragment>
-        )}
-      </nav>
+      
       
       <Switch>
         <Route exact path="/" render={(props) => <Home {...props} />} />
