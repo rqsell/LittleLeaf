@@ -70,10 +70,21 @@ router.get("/GetAllGoal", verifyToken, (req, res, next) => {
     } else {
       Goals.find({ userId: authData.user._id }).then((goals) => {
         res.json({ goals });
-      })
+      });
     }
-  })
-})
+  });
+});
+router.get("/GetGoals/:id", verifyToken, (req, res, next) => {
+  jwt.verify(req.token, "secretkey", (err, authData) => {
+    if (err) {
+      res.status(403).json(err);
+    } else {
+      Goals.findById(req.params.id).then((goal) => {
+        res.json({ goal });
+      });
+    }
+  });
+});
 
 function isAuth(req, res, next) {
   req.isAuthenticated()
