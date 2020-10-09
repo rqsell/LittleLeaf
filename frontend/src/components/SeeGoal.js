@@ -1,30 +1,34 @@
-import React, { useState, useEffect } from 'react';
-import actions from '../api';
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import actions from "../api";
+import GoalDetail from "./GoalDetails";
 
 function SeeGoal(props) {
-    const [goals, setGoals] = useState([])
+  const [goals, setGoals] = useState([]);
 
-    useEffect(() => {
-        async function getGoals() {
-            let res = await actions.getAllGoals()
-            console.log(res)
-            setGoals(res.data.goals)
-        }
-        getGoals()
-    }, [])
-
-    const showGoals = () => {
-        return goals.map((eachGoal) => {
-            return (
-                <li>{eachGoal.name}</li>
-            )
-        })
+  useEffect(() => {
+    async function getGoals() {
+      let res = await actions.getAllGoals();
+      if (res) {
+        console.log(res);
+        setGoals(res.data.goals);
+      } else {
+        alert("res is undefined. Sign your butt in!");
+      }
     }
-    return (
-        <div>
-            {showGoals()}
-        </div>
-    );
+    getGoals();
+  }, []);
+
+  const showGoals = () => {
+    return goals.map((eachGoal) => {
+      return (
+        <Link to={`/goals/${eachGoal._id}`}>
+          <li>{eachGoal.name}</li>
+        </Link>
+      );
+    });
+  };
+  return <div>{showGoals()}</div>;
 }
 
 export default SeeGoal;
