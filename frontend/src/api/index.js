@@ -47,6 +47,9 @@ const actions = {
   addapost: async (data) => {
     return await API.post("/AddAPost", data, resetHead());
   },
+  getAllGoals: async (goal) => {
+    return await API.get(`/GetAllGoal`, resetHead());
+  },
 };
 
 API.interceptors.response.use(
