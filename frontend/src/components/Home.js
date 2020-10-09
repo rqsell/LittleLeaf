@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import actions from "../api/index";
 
 const Home = (props) => {
@@ -17,10 +18,16 @@ const Home = (props) => {
           />
 
           {open ? (
-            <ul>
-              <li>Home</li>
-              <li>Sign Up</li>
-              <li>Log In</li>
+            <ul className="hamburgerMenu">
+              <Link to="/">
+                <li>Home</li>
+              </Link>
+              <Link to="/AddAGoal">
+                <li>Add a Goal</li>
+              </Link>
+              <Link>
+                <li>Log In</li>
+              </Link>
               <li>About Us</li>
               <li>Profile</li>
             </ul>

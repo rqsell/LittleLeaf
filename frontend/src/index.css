@@ -126,6 +126,12 @@ nav a {
   /* text-align: center; */
   width: 60vw;
 }
+.hamburgerMenu {
+  background: black;
+}
+.hamburgerMenu li {
+  list-style-type: none;
+}
 .bodyText h5 {
   font-family: "Baskervville", serif;
   color: rgb(77, 92, 77);
