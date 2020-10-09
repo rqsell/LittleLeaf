@@ -33,7 +33,7 @@ nav a {
   top: -90px;
   /* margin-left: 1.5vw; */
 }
-#google-auth{
+#google-auth {
   display: flex;
   justify-content: center;
   height: 10vh;
@@ -92,7 +92,7 @@ nav a {
   color: rgb(77, 92, 77);
   font-family: "Baskervville", serif;
 }
-#homeIT1{
+#homeIT1 {
   font-size: 34px;
 }
 #homeIT2 {
@@ -110,7 +110,16 @@ nav a {
   width: auto;
   /* margin-left: 10vw; */
 }
-.bodyText{
+.logo {
+  transition: all 1s;
+  width: 200px;
+  height: 200px;
+}
+.logo#fluffycat {
+  width: 600px;
+  height: auto;
+}
+.bodyText {
   margin-top: 30px;
   margin-left: 20vw;
   text-align: center;
@@ -129,15 +138,14 @@ nav a {
   color: rgb(77, 92, 77);
   font-family: "Open Sans", sans-serif;
 }
-.bodyTextP1{
+.bodyTextP1 {
   font-size: 14px;
 }
-.bodyTextP2{
+.bodyTextP2 {
   font-size: 14px;
 }
 footer {
   margin-top: 100px;
-  
 }
 footer p {
   margin-top: -5px;
@@ -147,11 +155,11 @@ footer p {
 body {
   font-family: "Open Sans", sans-serif;
 }
-.vanillaForm{
+.vanillaForm {
   display: flex;
   flex-direction: column;
 }
-#addGoalButton{
+#addGoalButton {
   width: 25vw;
   border-radius: 2%;
   border: black solid 1px;
