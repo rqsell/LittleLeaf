@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 // import Form from 'react-bootstrap/Form'
 import actions from "../api";
+import SeeGoal from './SeeGoal';
+
 
 function AddAGoal(props) {
   const [name, setName] = useState("");
@@ -26,7 +28,11 @@ function AddAGoal(props) {
     console.log(res);
     // console.log(props);
     // props.history.push("/movies"); // Go back to whatever route you give inside the parentheses
+
+
   }
+
+
   return (
     <div>
       <form onSubmit={handleSubmit} style={{ padding: "80px" }} class="vanillaForm">
@@ -57,7 +63,7 @@ function AddAGoal(props) {
           type="text"
           name="Description"
         />
-        <br/>
+        <br />
         {/* <label>Set Status</label> */}
         <select name="status" onChange={(e) => setStatus(e.target.value)} >
           <option>Set Status...</option>
@@ -65,9 +71,10 @@ function AddAGoal(props) {
           <option>In Progress</option>
           <option>Complete</option>
         </select>
-        <br/>
+        <br />
         <button id="addGoalButton">Add Goal</button>
       </form>
+      <SeeGoal />
     </div>
   );
 }
@@ -77,7 +84,7 @@ function AddAGoal(props) {
 
 
 
- {/* <Form class="addGoalForm">
+{/* <Form class="addGoalForm">
         
           <Form.Group controlId="formName">
           <Form.Label>Goal Name:</Form.Label>
@@ -119,7 +126,7 @@ function AddAGoal(props) {
             </Button>
           </Form> */}
 
-        {/* <Dropdown>
+{/* <Dropdown>
           <Dropdown.Toggle variant="success" id="dropdown-basic">
             Status
           </Dropdown.Toggle>
