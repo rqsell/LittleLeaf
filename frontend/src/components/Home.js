@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import actions from "../api/index";
-
+import swal from 'sweetalert';
+import {Link} from 'react-router-dom'
 const Home = (props) => {
   const [open, setOpen] = useState(false);
 
   return (
     <div>
+      
       <header class="headerTotal">
         <nav>
           <img
@@ -70,6 +72,7 @@ const Home = (props) => {
         <p>Created by: Ashtyn Czapansky, Rebecca Sell, & Jada Woody</p>
         <p>Ironhack Class of Aug 2020</p>
       </footer>
+      {/* {swal("Your Goal has been added to your Big Tree Calendar!")} */}
     </div>
   );
 };

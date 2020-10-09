@@ -30,7 +30,7 @@ nav a {
   height: 40vh;
   width: auto;
   position: absolute;
-  top: -90px;
+  top: -20px;
   /* margin-left: 1.5vw; */
 }
 #google-auth {
@@ -164,9 +164,50 @@ body {
 .vanillaForm {
   display: flex;
   flex-direction: column;
+  margin-top: -10vh;
+}
+.vanillaForm label{
+  font-family: "Open Sans", sans-serif;
+}
+.vanillaForm select {
+  font-family: "Open Sans", sans-serif;
+  border-color: darkseagreen;
+}
+.vanillaForm input{
+  border-color: darkseagreen;
+}
+.vanillaForm button {
+  font-family: "Open Sans", sans-serif;
+  color: rgb(77, 92, 77);
+  background-color: darkseagreen;
 }
 #addGoalButton {
   width: 25vw;
   border-radius: 2%;
   border: black solid 1px;
+}
+.eachGoalName{
+  color: rgb(77, 92, 77);
+  list-style: none;
+  text-align: center;
+
+}
+.eachGoalDes{
+  color: rgb(114, 141, 114);
+  text-align: center;
+}
+.goalsintro{
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+}
+.goalsHere{
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+}
+.goalsBio{
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
+  width: 70vw;
+  margin-left: 15vw;
 }
