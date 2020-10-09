@@ -19,7 +19,7 @@ const Home = (props) => {
           />
 
           {open ? (
-            <ul>
+            <ul className="menuList">
               <li>Home</li>
               <Link to='/sign-up'><li>Sign Up</li></Link>
               <li>Log In</li>
