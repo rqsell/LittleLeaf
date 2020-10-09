@@ -50,6 +50,9 @@ const actions = {
   getAllGoals: async (goal) => {
     return await API.get(`/GetAllGoal`, resetHead());
   },
+  getGoalDetails: async (goalid) => {
+    return await API.get(`/GetGoals/${goalid}`, resetHead());
+  },
 };
 
 API.interceptors.response.use(
