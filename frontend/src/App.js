@@ -7,17 +7,19 @@ import SignUp from "./components/auth/SignUp";
 import LogIn from "./components/auth/LogIn";
 import Profile from "./components/profile/Profile";
 import GoalDetails from "./components/GoalDetails";
+import AddAGoal from "./components/AddAGoal";
 import actions from "./api/index";
 import GoogleAuth from "./components/auth/GoogleAuth";
 import GoogleAuthLogin from "./components/auth/GoogleAuthLogin";
 import "bootstrap/dist/css/bootstrap.min.css";
 import AddATask from "./components/AddATask";
+import swal from 'sweetalert'
 // import "bootstrap/scss/bootstrap";
 import {
   NotificationContainer,
   NotificationManager,
 } from "react-notifications";
-import AddAGoal from "./components/AddAGoal";
+
 const App = () => {
   let [user, setUser] = useState(null);
 
@@ -40,23 +42,8 @@ const App = () => {
   return (
     <TheContext.Provider value={{ history, user, setUser }}>
       {user?.email}
-      <nav>
-        <NavLink to="/">Home</NavLink>
-
-        {user ? (
-          <Fragment>
-            <NavLink onClick={logOut} to="/">
-              Log Out
-            </NavLink>
-            <NavLink to="/profile">Profile</NavLink>
-          </Fragment>
-        ) : (
-          <Fragment>
-            <NavLink to="/sign-up">Sign Up</NavLink>
-            <NavLink to="/log-in">Log In</NavLink>
-          </Fragment>
-        )}
-      </nav>
+      
+      
       <Switch>
         <Route exact path="/" render={(props) => <Home {...props} />} />
         <Route
