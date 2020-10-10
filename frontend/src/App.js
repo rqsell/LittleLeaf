@@ -13,7 +13,6 @@ import GoogleAuth from "./components/auth/GoogleAuth";
 import GoogleAuthLogin from "./components/auth/GoogleAuthLogin";
 import "bootstrap/dist/css/bootstrap.min.css";
 import AddATask from "./components/AddATask";
-import swal from 'sweetalert'
 // import "bootstrap/scss/bootstrap";
 import {
   NotificationContainer,
@@ -42,8 +41,7 @@ const App = () => {
   return (
     <TheContext.Provider value={{ history, user, setUser }}>
       {user?.email}
-      
-      
+
       <Switch>
         <Route exact path="/" render={(props) => <Home {...props} />} />
         <Route
