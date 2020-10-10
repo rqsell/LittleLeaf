@@ -18,28 +18,17 @@ function SeeGoal(props) {
     }
     getGoals();
   }, []);
-  
 
   const showGoals = () => {
     return goals.map((eachGoal) => {
       return (
-      
         <Link to={`/goals/${eachGoal._id}`}>
-          <li class="eachGoalName">Goal: {eachGoal.name}</li>
-          <p class="eachGoalDes">Description: {eachGoal.description}</p>
+          <li>{eachGoal.name}</li>
         </Link>
-        
       );
     });
   };
-  return (
-    
-    <div>
-      <h5 class="goalsHere">Here, we've listed your Goals!</h5>
-      
-      {showGoals()}
-    </div>
-  )  
+  return <div>{showGoals()}</div>;
 }
 
 export default SeeGoal;
