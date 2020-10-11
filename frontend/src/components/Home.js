@@ -1,37 +1,43 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { slide as Menu } from "react-burger-menu";
 import actions from "../api/index";
-
 
 const Home = (props) => {
   const [open, setOpen] = useState(false);
 
   return (
     <div>
-      
       <header className="headerTotal">
         <nav>
           <img
             src="./images/Copy of Little Leaf Big Tree Logo.png"
             alt="our logo"
-            id={open ? "fluffycat" : ""}
-            className="logo"
+            id={open ? "clickedlogo" : ""}
+            class="logo"
             onClick={() => setOpen(!open)}
           />
 
           {open ? (
-            <ul className="menuList">
-              <li>Home</li>
-              <Link to='/sign-up'><li>Sign Up</li></Link>
-              <li>Log In</li>
-              <Link to="/AddAGoal"><li>Add A Goal</li></Link>
+            <ul className="hamburgerMenu">
+              {/* <Menu> */}
+              <Link to="/">
+                <li>Home</li>
+              </Link>
+              <Link to="/AddAGoal">
+                <li>Add a Goal</li>
+              </Link>
+              <Link>
+                <li>Log In</li>
+              </Link>
               <li>About Us</li>
               <li>Profile</li>
+              {/* </Menu> */}
             </ul>
           ) : null}
         </nav>
 
-        <div className ="textInHeader">
+        <div className="textInHeader">
           <h3 className="title1">little leaf</h3>
           <br />
           <br />
@@ -43,7 +49,11 @@ const Home = (props) => {
         <h2 id="homeIT2">We're here to help you reach your goals!</h2>
       </div>
       <div className="bigTreeClass">
-        <img src="./images/bigTree.png" alt="bigTreeImage" class="bigTreeImg" />
+        <img
+          src="./images/bigTree.png"
+          alt="bigTreeImage"
+          className="bigTreeImg"
+        />
       </div>
       <div className="bodyText">
         <h5>"True life is lived when tiny changes occur." -Leo Tolstoy</h5>

@@ -4,8 +4,7 @@ import React, { useState } from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 // import Form from 'react-bootstrap/Form'
 import actions from "../api";
-import SeeGoal from './SeeGoal';
-
+import SeeGoal from "./SeeGoal";
 
 function AddAGoal(props) {
   const [name, setName] = useState("");
@@ -28,20 +27,23 @@ function AddAGoal(props) {
     console.log(res);
     // console.log(props);
     // props.history.push("/movies"); // Go back to whatever route you give inside the parentheses
-
-
   }
-
 
   return (
     <div className="addAGoalDiv">
-      <h4 class='goalsintro'>Welcome to your Goals page!</h4>
-      <p class="goalsBio">Each goal you add and complete will take you closer to success! Each goal may be stand-alone, or may include several related tasks!  </p>
+      <h4 class="goalsintro">Welcome to your Goals page!</h4>
+      <p class="goalsBio">
+        Each goal you add and complete will take you closer to success! Each
+        goal may be stand-alone, or may include several related tasks!{" "}
+      </p>
       <SeeGoal />
       <br></br>
-      
       <h4 class="goalsintro">Add a New Goal to Your List!</h4>
-      <form onSubmit={handleSubmit} style={{ padding: "80px" }} class="vanillaForm">
+      <form
+        onSubmit={handleSubmit}
+        style={{ padding: "80px" }}
+        class="vanillaForm"
+      >
         <label for="Name">Goal Name</label>
         <input
           onChange={(e) => setName(e.target.value)}
@@ -71,7 +73,7 @@ function AddAGoal(props) {
         />
         <br />
         {/* <label>Set Status</label> */}
-        <select name="status" onChange={(e) => setStatus(e.target.value)} >
+        <select name="status" onChange={(e) => setStatus(e.target.value)}>
           <option>Set Status...</option>
           <option>Incomplete</option>
           <option>In Progress</option>
@@ -80,18 +82,12 @@ function AddAGoal(props) {
         <br />
         <button id="addGoalButton">Add Goal</button>
       </form>
-
-      
     </div>
   );
 }
 
-
-
-
-
-
-{/* <Form class="addGoalForm">
+{
+  /* <Form class="addGoalForm">
         
           <Form.Group controlId="formName">
           <Form.Label>Goal Name:</Form.Label>
@@ -131,9 +127,11 @@ function AddAGoal(props) {
             <Button variant="primary" type="submit">
               Submit
             </Button>
-          </Form> */}
+          </Form> */
+}
 
-{/* <Dropdown>
+{
+  /* <Dropdown>
           <Dropdown.Toggle variant="success" id="dropdown-basic">
             Status
           </Dropdown.Toggle>
@@ -142,11 +140,7 @@ function AddAGoal(props) {
             <Dropdown.Item href="#/action-2">In progress</Dropdown.Item>
             <Dropdown.Item href="#/action-3">Complete</Dropdown.Item>
           </Dropdown.Menu>
-        </Dropdown> */}
-
-
+        </Dropdown> */
+}
 
 export default AddAGoal;
-
-
-
