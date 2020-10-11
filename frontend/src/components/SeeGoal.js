@@ -25,8 +25,8 @@ function SeeGoal(props) {
       return (
       
         <Link to={`/goals/${eachGoal._id}`}>
-          <li class="eachGoalName">Goal: {eachGoal.name}</li>
-          <p class="eachGoalDes">Description: {eachGoal.description}</p>
+          <li className="eachGoalName">Goal: {eachGoal.name}</li>
+          <p className="eachGoalDes">Description: {eachGoal.description}</p>
         </Link>
         
       );
@@ -35,8 +35,7 @@ function SeeGoal(props) {
   return (
     
     <div>
-      <h5 class="goalsHere">Here, we've listed your Goals!</h5>
-      
+      <h5 className="goalsHere">Here, we've listed your Goals!</h5>
       {showGoals()}
     </div>
   )  
