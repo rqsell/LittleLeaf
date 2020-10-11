@@ -19,23 +19,27 @@ const Home = (props) => {
             onClick={() => setOpen(!open)}
           />
 
-          {open ? (
-            <ul className="hamburgerMenu">
-              {/* <Menu> */}
-              <Link to="/">
-                <li>Home</li>
-              </Link>
-              <Link to="/AddAGoal">
-                <li>Add a Goal</li>
-              </Link>
-              <Link>
-                <li>Log In</li>
-              </Link>
-              <li>About Us</li>
-              <li>Profile</li>
-              {/* </Menu> */}
-            </ul>
-          ) : null}
+          {/* {open ? ( */}
+
+          <ul className="hamburgerMenu" id={open ? "clickedmenu" : ""}>
+            {/* <Menu> */}
+            <div className="x" onClick={() => setOpen(!open)}>
+              X
+            </div>
+            <Link to="/">
+              <li>Home</li>
+            </Link>
+            <Link to="/AddAGoal">
+              <li>Add a Goal</li>
+            </Link>
+            <Link>
+              <li>Log In</li>
+            </Link>
+            <li>About Us</li>
+            <li>Profile</li>
+            {/* </Menu> */}
+          </ul>
+          {/* ) : null} */}
         </nav>
 
         <div className="textInHeader">
