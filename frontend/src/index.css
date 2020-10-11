@@ -29,9 +29,11 @@ nav a {
 .logo {
   height: 40vh;
   width: auto;
-  position: absolute;
+  display: flex;
+  align-items: center;
+  margin-top: 20%;
   top: -90px;
-  /* margin-left: 1.5vw; */
+  margin-left: 1.5vw;
 }
 #google-auth {
   display: flex;
@@ -110,15 +112,7 @@ nav a {
   width: auto;
   /* margin-left: 10vw; */
 }
-.logo {
-  transition: all 1s;
-  width: 200px;
-  height: 200px;
-}
-.logo#fluffycat {
-  width: 600px;
-  height: auto;
-}
+
 .bodyText {
   margin-top: 30px;
   margin-left: 20vw;
@@ -126,11 +120,70 @@ nav a {
   /* text-align: center; */
   width: 60vw;
 }
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+#clickedlogo {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+  margin-top: 400px;
+}
 .hamburgerMenu {
-  background: black;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  background: RGB(154, 189, 121);
+  animation: fadeIn ease 10s;
+  padding-top: 10px;
+  opacity: 0.8;
+  transform: rotate(1deg);
+  top: -30px;
+  height: 70vh;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 .hamburgerMenu li {
   list-style-type: none;
+  padding: 20px;
 }
 .bodyText h5 {
   font-family: "Baskervville", serif;
@@ -164,9 +217,49 @@ body {
 .vanillaForm {
   display: flex;
   flex-direction: column;
+  margin-top: -10vh;
+}
+.vanillaForm label {
+  font-family: "Open Sans", sans-serif;
+}
+.vanillaForm select {
+  font-family: "Open Sans", sans-serif;
+  border-color: darkseagreen;
+}
+.vanillaForm input {
+  border-color: darkseagreen;
+}
+.vanillaForm button {
+  font-family: "Open Sans", sans-serif;
+  color: rgb(77, 92, 77);
+  background-color: darkseagreen;
 }
 #addGoalButton {
   width: 25vw;
   border-radius: 2%;
   border: black solid 1px;
+}
+.eachGoalName {
+  color: rgb(77, 92, 77);
+  list-style: none;
+  text-align: center;
+}
+.eachGoalDes {
+  color: rgb(114, 141, 114);
+  text-align: center;
+}
+.goalsintro {
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+}
+.goalsHere {
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+}
+.goalsBio {
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
+  width: 70vw;
+  margin-left: 15vw;
 }
