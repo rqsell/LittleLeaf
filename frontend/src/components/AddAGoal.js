@@ -17,12 +17,13 @@ function AddAGoal(props) {
   async function handleSubmit(e) {
     e.preventDefault();
     // let res = await axios.post(`http://localhost:5000/api/AddAGoal`, {
-    console.log(status);
+
     let res = await actions.addapost({
-      name,
-      start,
+      name: name,
+      start: start,
       end,
       description,
+      // goalId: props.match.params._id;
       status,
     });
     console.log(res);
