@@ -9,6 +9,13 @@ router.get("/SeeGoals", (req, res) => {
     res.json(goals);
   });
 });
+
+router.get("/SeeTask", (req, res) => {
+  Tasks.find().then((tasks) => {
+    res.json(tasks);
+  });
+});
+
 // router.get("/SeeGoals:id", (req, res) => {
 //   console.log(req.params.id);
 //   Goals.findById(req.params.id).then((goal) => {
