@@ -13,14 +13,11 @@ import GoogleAuth from "./components/auth/GoogleAuth";
 import GoogleAuthLogin from "./components/auth/GoogleAuthLogin";
 import "bootstrap/dist/css/bootstrap.min.css";
 import AddATask from "./components/AddATask";
-import MyCalendar from './components/profile/MyCalendar'
-import 'react-calendar/dist/Calendar.css';
 // import "bootstrap/scss/bootstrap";
 import {
   NotificationContainer,
   NotificationManager,
 } from "react-notifications";
-import Calendar from "react-calendar";
 
 const App = () => {
   let [user, setUser] = useState(null);
@@ -78,12 +75,6 @@ const App = () => {
           path="/AddATask"
           render={(props) => <AddATask {...props} />}
         />
-
-        <Route
-          exact
-          path="/MyCalendar"
-          render={(props) => <MyCalendar {...props} />}
-        />  
 
         <Route component={NotFound} />
       </Switch>
