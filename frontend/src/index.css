@@ -25,6 +25,19 @@ nav a {
   padding: 20px;
   margin: 5px;
 } */
+.logo2 {
+  height: 40vh;
+  width: auto;
+  margin-left: 1.5vw;
+}
+.goalIntro {
+  display: flex;
+  align-items: center;
+}
+#logobox {
+  width: 10%;
+  height: auto;
+}
 
 .logo {
   height: 40vh;
@@ -34,7 +47,6 @@ nav a {
   margin-top: 20%;
   top: -90px;
   margin-left: 1.5vw;
-  z-index: 2000;
 }
 #google-auth {
   display: flex;
@@ -156,19 +168,20 @@ nav a {
     transform: translate(1px, -2px) rotate(-1deg);
   }
 }
-#clickedlogo {
-  /* animation: shake 0.5s; */
-  animation-iteration-count: infinite;
-  /* position: relative; */
-  /* z-index: 2000; */
-}
 .x {
   float: right;
-  padding-right: 5%;
+  margin-top: 5%;
+  margin-right: 10%;
+  height: 3vh;
+  width: 1vw;
+}
+.x:hover {
+  color: white;
 }
 .hamburgerMenu {
   width: 25vw;
   height: 100vh;
+  padding-top: 3%;
   background-color: #afd18e;
   position: fixed;
   top: 0;
@@ -193,8 +206,15 @@ nav a {
 .hamburgerMenu li {
   list-style-type: none;
   padding: 20px;
-  z-index: 1;
+  color: black;
+  list-style-type: none;
 }
+.hamburgerMenu li:hover {
+  list-style-type: none;
+  padding: 20px;
+  color: white;
+}
+
 .bodyText h5 {
   font-family: "Baskervville", serif;
   color: rgb(77, 92, 77);
@@ -259,17 +279,28 @@ body {
   text-align: center;
 }
 .goalsintro {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-family: "Open Sans", sans-serif;
 }
 .goalsHere {
   text-align: center;
   font-family: "Open Sans", sans-serif;
 }
-.goalsBio {
+/* .goalsBio {
   text-align: center;
   font-family: "Open Sans", sans-serif;
   font-size: 12px;
   width: 70vw;
-  margin-left: 15vw;
+  border: 3px solid red;
+} */
+
+#introbox {
+  margin-left: 20vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* border: 3px solid black; */
 }
