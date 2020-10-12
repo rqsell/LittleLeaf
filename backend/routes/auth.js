@@ -4,7 +4,7 @@ const User = require("../models/User");
 const passport = require("../config/passport");
 const jwt = require("jsonwebtoken");
 const Goals = require("../models/Goal.js");
-const Tasks = require ("../models/Task.js")
+const Tasks = require("../models/Task.js");
 router.post("/signup", (req, res, next) => {
   User.register(req.body, req.body.password)
     .then((user) => {
@@ -68,9 +68,9 @@ router.post("/AddTaskDB", verifyToken, (req, res) => {
       res.status(403).json(err);
     } else {
       // res.status(200).json(authData.user)
-      console.log(authData.user, "monday");
+      console.log(authData.user, "new stuf ahhhh!");
       let task = req.body;
-      task.goalId = authData.user._id;
+      task.userId = authData.user._id;
       Tasks.create(task).then((task) => {
         res.json({ task });
       });
@@ -90,12 +90,26 @@ router.get("/GetAllGoal", verifyToken, (req, res, next) => {
   });
 });
 
-router.get("/getAllTasks", verifyToken, (req, res, next) => {
+router.get("/GetTasksDB/:strawberryShortcakegoalid", verifyToken, (req, res, next) => {
   jwt.verify(req.token, "secretkey", (err, authData) => {
     if (err) {
       res.status(403).json(err);
     } else {
-      Tasks.find({ userId: authData.user._id }).then((tasks) => {
+      Tasks.find({ goalId: req.params.strawberryShortcakegoalid }).then((tasks) => {
+        res.json({ tasks });
+      });
+    }
+  });
+});
+
+router.post("/getAllTasks", verifyToken, (req, res, next) => {
+  console.log(req.body, "erere");
+  jwt.verify(req.token, "secretkey", (err, authData) => {
+    if (err) {
+      res.status(403).json(err);
+    } else {
+      Tasks.find({ goalId: authData.user._id }).then((tasks) => {
+        console.log(tasks, "ererere");
         res.json({ tasks });
       });
     }
