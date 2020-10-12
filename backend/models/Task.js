@@ -8,7 +8,7 @@ const taskSchema = new Schema(
     status: {
       required: true,
       type: String,
-      enum: ["incomplete", "in progress", "complete"],
+      enum: ["Incomplete", "In Progress", "Complete"],
     },
     userId: {
       type: Schema.Types.ObjectId,
@@ -26,4 +26,4 @@ const taskSchema = new Schema(
   }
 );
 
-module.exports = model("User", userSchema);
+module.exports = model("Tasks", taskSchema);
