@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import actions from "../api";
 import MyCalendar from './profile/MyCalendar'
 import AddATask from './AddATask'
+import SeeTask from './SeeTask.js'
+
 function GoalDetails(props) {
   const [goalDetail, setGoalDetail] = useState([]);
 
@@ -29,6 +31,8 @@ function GoalDetails(props) {
       <AddATask/>
       
       <MyCalendar {...props} />
+
+      <SeeTask />
       {/**Update end dates onChange of calandar */}
 
       {/**Add/View Tasks to Goal don't forget to use the :goalid */}

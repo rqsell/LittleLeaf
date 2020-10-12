@@ -89,6 +89,19 @@ router.get("/GetAllGoal", verifyToken, (req, res, next) => {
     }
   });
 });
+
+router.get("/getAllTasks", verifyToken, (req, res, next) => {
+  jwt.verify(req.token, "secretkey", (err, authData) => {
+    if (err) {
+      res.status(403).json(err);
+    } else {
+      Tasks.find({ userId: authData.user._id }).then((tasks) => {
+        res.json({ tasks });
+      });
+    }
+  });
+});
+
 router.get("/GetGoals/:id", verifyToken, (req, res, next) => {
   jwt.verify(req.token, "secretkey", (err, authData) => {
     if (err) {

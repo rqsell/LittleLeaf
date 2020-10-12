@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import Dropdown from "react-bootstrap/Dropdown";
 import actions from "../api";
 
+
 function AddATask(props) {
     const [name, setName] = useState("")
     const [start, setStart] = useState("")
     const [end, setEnd] = useState("")
     const [description, setDescription] = useState("")
     const [status, setStatus] = useState("")
-
+   
     async function handleSubmit(e) {
         e.preventDefault();
 
@@ -22,10 +23,6 @@ function AddATask(props) {
         });
         console.log(res);
     }
-
-
-
-
     return (
         <div>
             <form onSubmit={handleSubmit} style={{ padding: "80px" }} class="vanillaForm">
@@ -67,6 +64,9 @@ function AddATask(props) {
                 <br />
                 <button id="addGoalButton">Add Task</button>
             </form>
+
+        
+
         </div>
     );
 }

@@ -56,6 +56,9 @@ const actions = {
   AddTaskDB: async (data) => {
     return await API.post("/AddTaskDB", data, resetHead());
   }, 
+  getAllTasks: async (tasks) => {
+    return await API.get('/getAllTasks', resetHead());
+  }
 };
 
 API.interceptors.response.use(
