@@ -53,6 +53,9 @@ const actions = {
   getGoalDetails: async (goalid) => {
     return await API.get(`/GetGoals/${goalid}`, resetHead());
   },
+  AddTaskDB: async (data) => {
+    return await API.post("/AddTaskDB", data, resetHead());
+  }, 
 };
 
 API.interceptors.response.use(

@@ -4,7 +4,7 @@ const User = require("../models/User");
 const passport = require("../config/passport");
 const jwt = require("jsonwebtoken");
 const Goals = require("../models/Goal.js");
-
+const Tasks = require ("../models/Task.js")
 router.post("/signup", (req, res, next) => {
   User.register(req.body, req.body.password)
     .then((user) => {
@@ -58,6 +58,21 @@ router.post("/AddAPost", verifyToken, (req, res) => {
       goal.userId = authData.user._id;
       Goals.create(goal).then((goal) => {
         res.json({ goal });
+      });
+    }
+  });
+});
+router.post("/AddTaskDB", verifyToken, (req, res) => {
+  jwt.verify(req.token, "secretkey", (err, authData) => {
+    if (err) {
+      res.status(403).json(err);
+    } else {
+      // res.status(200).json(authData.user)
+      console.log(authData.user, "monday");
+      let task = req.body;
+      task.goalId = authData.user._id;
+      Tasks.create(task).then((task) => {
+        res.json({ task });
       });
     }
   });
