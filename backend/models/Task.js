@@ -6,7 +6,6 @@ const taskSchema = new Schema(
     endDate: String,
     description: String,
     status: {
-      required: true,
       type: String,
       enum: ["Incomplete", "In Progress", "Complete"],
     },

@@ -53,12 +53,16 @@ const actions = {
   getGoalDetails: async (goalid) => {
     return await API.get(`/GetGoals/${goalid}`, resetHead());
   },
+  getTasks: async (goalid) => {
+    return await API.get(`/GetTasksDB/${goalid}`, resetHead());
+  },
   AddTaskDB: async (data) => {
     return await API.post("/AddTaskDB", data, resetHead());
-  }, 
+  },
   getAllTasks: async (tasks) => {
-    return await API.get('/getAllTasks', resetHead());
-  }
+    console.log(tasks);
+    return await API.post("/getAllTasks", tasks, resetHead());
+  },
 };
 
 API.interceptors.response.use(
