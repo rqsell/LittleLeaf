@@ -25,6 +25,19 @@ nav a {
   padding: 20px;
   margin: 5px;
 } */
+.logo2 {
+  height: 40vh;
+  width: auto;
+  margin-left: 1.5vw;
+}
+.goalIntro {
+  display: flex;
+  align-items: center;
+}
+#logobox {
+  width: 10%;
+  height: auto;
+}
 
 .logo {
   height: 40vh;
@@ -38,7 +51,7 @@ nav a {
 #google-auth {
   display: flex;
   justify-content: center;
-  height: 12vh;
+  height: 10vh;
   margin-top: 10vh;
   margin-bottom: 5vh;
 }
@@ -155,23 +168,32 @@ nav a {
     transform: translate(1px, -2px) rotate(-1deg);
   }
 }
-#clickedlogo {
-  animation: shake 0.5s;
-  animation-iteration-count: infinite;
-  margin-top: 400px;
+.x {
+  float: right;
+  margin-top: 5%;
+  margin-right: 10%;
+  height: 3vh;
+  width: 1vw;
+}
+.x:hover {
+  color: white;
 }
 .hamburgerMenu {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-direction: column;
-  background: RGB(154, 189, 121);
-  animation: fadeIn ease 10s;
-  padding-top: 10px;
-  opacity: 0.8;
-  transform: rotate(1deg);
-  top: -30px;
-  height: 70vh;
+  width: 25vw;
+  height: 100vh;
+  padding-top: 3%;
+  background-color: #afd18e;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s cubic-bezier(0, 0.52, 0, 1);
+  overflow: scroll;
+  z-index: 1000;
+  transform: translate3d(-100vw, 0, 0);
+}
+#clickedmenu {
+  transform: translate3d(0vw, 0, 0);
+  overflow: hidden;
 }
 @keyframes fadeIn {
   0% {
@@ -184,7 +206,15 @@ nav a {
 .hamburgerMenu li {
   list-style-type: none;
   padding: 20px;
+  color: black;
+  list-style-type: none;
 }
+.hamburgerMenu li:hover {
+  list-style-type: none;
+  padding: 20px;
+  color: white;
+}
+
 .bodyText h5 {
   font-family: "Baskervville", serif;
   color: rgb(77, 92, 77);
@@ -249,17 +279,28 @@ body {
   text-align: center;
 }
 .goalsintro {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-family: "Open Sans", sans-serif;
 }
 .goalsHere {
   text-align: center;
   font-family: "Open Sans", sans-serif;
 }
-.goalsBio {
+/* .goalsBio {
   text-align: center;
   font-family: "Open Sans", sans-serif;
   font-size: 12px;
   width: 70vw;
-  margin-left: 15vw;
+  border: 3px solid red;
+} */
+
+#introbox {
+  margin-left: 20vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* border: 3px solid black; */
 }

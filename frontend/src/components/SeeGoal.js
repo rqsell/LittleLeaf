@@ -23,8 +23,8 @@ function SeeGoal(props) {
     return goals.map((eachGoal) => {
       return (
         <Link to={`/goals/${eachGoal._id}`}>
-          <li className="eachGoalName">Goal: {eachGoal.name}</li>
-          <p className="eachGoalDes">Description: {eachGoal.description}</p>
+          <li class="eachGoalName">Goal: {eachGoal.name}</li>
+          <p class="eachGoalDes">Description: {eachGoal.description}</p>
         </Link>
       );
     });
