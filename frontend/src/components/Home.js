@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { slide as Menu } from "react-burger-menu";
-
 import actions from "../api/index";
 
 const Home = (props) => {
@@ -26,13 +25,13 @@ const Home = (props) => {
             <div className="x" onClick={() => setOpen(!open)}>
               X
             </div>
-            <Link to="/">
+            <Link to="/" style={{ textDecoration: "none" }}>
               <li>Home</li>
             </Link>
-            <Link to="/AddAGoal">
+            <Link to="/AddAGoal" style={{ textDecoration: "none" }}>
               <li>Add a Goal</li>
             </Link>
-            <Link>
+            <Link style={{ textDecoration: "none" }}>
               <li>Log In</li>
             </Link>
             <li>About Us</li>
