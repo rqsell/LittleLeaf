@@ -13,7 +13,7 @@ function AddATask(props) {
         e.preventDefault();
 
         console.log(status);
-        let res = await actions.addapost({
+        let res = await actions.AddTaskDB({
             name,
             start,
             end,
@@ -22,6 +22,9 @@ function AddATask(props) {
         });
         console.log(res);
     }
+
+
+
 
     return (
         <div>

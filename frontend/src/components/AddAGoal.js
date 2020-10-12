@@ -65,7 +65,7 @@ function AddAGoal(props) {
           </article>
           <article id="introbox">
             <h4 class="goalsintro">Welcome to your Goals page!</h4>
-            <span>
+            <span className="goalPageText">
               Each goal you add and complete will take you closer to success!
               <br></br>
               Each goal may be stand-alone, or may include several related
