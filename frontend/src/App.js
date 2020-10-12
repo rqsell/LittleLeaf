@@ -76,7 +76,7 @@ const App = () => {
           path="/AddATask"
           render={(props) => <AddATask {...props} />}
         />
-        <Route exact path="/MyCalendar" render={(props) => <MyCalendar/>} />
+        <Route exact path="/MyCalendar" render={(props) => <MyCalendar {...props}/>} />
         
       </Switch>
       <div id="google-auth">
