@@ -1,34 +1,27 @@
 import React, { useState } from "react";
 import Calendar from "react-calendar";
-import onChange from "react-calendar";
-import onClickDay from "react-calendar";
-import AddToCalendar from "react-add-to-calendar";
+
+// import AddToCalendar from "react-add-to-calendar";
+
+console.log("yoyoyoyoy")
 
 function MyCalendar(props) {
-  const [newDate, setNewDate] = useState();
-  const [newEvent, setNewEvent] = useState();
-  onChange = (date) => this.setState({ date });
-  // onClickDay =
+  
+  const [date, setDate] = useState();
+ 
+  const handleChange= (newDate) => {
 
-  class Example extends React.Component {
-    static displayName = "Example";
-    state = {
-      event: {
-        title: "Sample Event",
-        description: "This is the sample event provided as an example only",
-        location: "Portland, OR",
-        startTime: "2016-09-16T20:15:00-04:00",
-        endTime: "2016-09-16T21:45:00-04:00",
-      },
-    };
+    setDate(newDate)
+      console.log(newDate)
   }
+  console.log(`to go the db atn update goal with id = ${props.match.params.goalid} with`, date )
 
   return (
     <div>
-      <Calendar onChange={this.onChange} value={this.state.date} />
-      <AddToCalendar event={this.state.event} />
+      <Calendar onChange={handleChange} value={date}/>.
+      {/* <AddToCalendar event={this.state.event} /> */}
     </div>
   );
 }
 
-export default Calendar;
+export default MyCalendar;

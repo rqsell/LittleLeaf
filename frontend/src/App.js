@@ -13,6 +13,7 @@ import GoogleAuth from "./components/auth/GoogleAuth";
 import GoogleAuthLogin from "./components/auth/GoogleAuthLogin";
 import "bootstrap/dist/css/bootstrap.min.css";
 import AddATask from "./components/AddATask";
+import MyCalendar from './components/profile/MyCalendar'
 // import "bootstrap/scss/bootstrap";
 import {
   NotificationContainer,
@@ -75,8 +76,8 @@ const App = () => {
           path="/AddATask"
           render={(props) => <AddATask {...props} />}
         />
-
-        <Route component={NotFound} />
+        <Route exact path="/MyCalendar" render={(props) => <MyCalendar {...props}/>} />
+        
       </Switch>
       <div id="google-auth">
         {!user && <GoogleAuth setUser={setUser} class="googleAuth" />}

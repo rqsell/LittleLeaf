@@ -304,3 +304,8 @@ body {
   align-items: center;
   /* border: 3px solid black; */
 }
+.goalPageText{
+  font-family: "Open Sans", sans-serif;
+  color: rgb(77, 92, 77);
+  font-weight: 800;
+}
