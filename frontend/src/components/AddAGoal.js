@@ -91,14 +91,14 @@ function AddAGoal(props) {
           <label for="Start Date">Goal Start Date </label>
           <input
             onChange={(e) => setStart(e.target.value)}
-            type="text"
+            type="date"
             name="Start"
           />
 
           <label for="End Date">Goal Due Date</label>
           <input
             onChange={(e) => setEnd(e.target.value)}
-            type="text"
+            type="date"
             name="End"
           />
 
