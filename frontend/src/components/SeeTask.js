@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import AddATask from "./AddATask";
 import actions from "../api";
 function SeeTask(props) {
   const [tasks, setTasks] = useState([]);
@@ -33,8 +34,8 @@ function SeeTask(props) {
   };
   return (
     <div>
-      <h1>Tasks</h1>
-      {/* {showTasks()} */}
+      {/* <AddATask /> */}
+      {showTasks()}
       {/* <Link to={`/tasks/${tasks._id}`}> */}
 
       {/* </Link> */}
