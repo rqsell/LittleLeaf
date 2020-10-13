@@ -36,24 +36,6 @@ router.get("/user", verifyToken, (req, res, next) => {
   });
 });
 
-router.get("/getAllEvents", verifyToken, (req, res, next) => {
-  jwt.verify(req.token, "secretkey", (err, authData) => {
-    if (err) {
-      res.status(403).json(err);
-    } else {
-      // res.status(200).json(authData.user)
-      console.log(authData.user, "tuesday");
-      Goals.find({ userId: authData.user._id }).then((goals) => {
-        Tasks.find({ userId: authData.user._id }).then((tasks) => {
-          res.json({ goals, tasks });
-        })
-
-      })
-        .catch((err) => res.status(500).json(err));
-    }
-  });
-});
-
 router.post("/login", passport.authenticate("local"), (req, res, next) => {
   const { user } = req;
   jwt.sign({ user }, "secretkey", { expiresIn: "30min" }, (err, token) => {
@@ -108,18 +90,6 @@ router.get("/GetAllGoal", verifyToken, (req, res, next) => {
   });
 });
 
-router.get("/GetTasksDB/:strawberryShortcakegoalid", verifyToken, (req, res, next) => {
-  jwt.verify(req.token, "secretkey", (err, authData) => {
-    if (err) {
-      res.status(403).json(err);
-    } else {
-      Tasks.find({ goalId: req.params.strawberryShortcakegoalid }).then((tasks) => {
-        res.json({ tasks });
-      });
-    }
-  });
-});
-
 router.post("/getAllTasks", verifyToken, (req, res, next) => {
   console.log(req.body, "erere");
   jwt.verify(req.token, "secretkey", (err, authData) => {
@@ -130,6 +100,23 @@ router.post("/getAllTasks", verifyToken, (req, res, next) => {
         console.log(tasks, "ererere");
         res.json({ tasks });
       });
+    }
+  });
+});
+router.get("/getAllEvents", verifyToken, (req, res, next) => {
+  jwt.verify(req.token, "secretkey", (err, authData) => {
+    if (err) {
+      res.status(403).json(err);
+    } else {
+      // res.status(200).json(authData.user)
+      console.log(authData.user, "tuesday");
+      Goals.find({ userId: authData.user._id })
+        .then((goals) => {
+          Tasks.find({ userId: authData.user._id }).then((tasks) => {
+            res.json({ goals, tasks });
+          });
+        })
+        .catch((err) => res.status(500).json(err));
     }
   });
 });
