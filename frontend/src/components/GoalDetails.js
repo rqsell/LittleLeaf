@@ -3,7 +3,7 @@ import actions from "../api";
 import MyCalendar from "./profile/MyCalendar";
 import AddATask from "./AddATask";
 import SeeTask from "./SeeTask.js";
-import Fullcalendar from "./Fullcalendar"
+import Fullcalendar from "./Fullcalendar";
 
 function GoalDetails(props) {
   const [goalDetail, setGoalDetail] = useState([]);
@@ -21,8 +21,8 @@ function GoalDetails(props) {
 
       let res2 = await actions.getTasks(props.match.params.goalid);
       console.log(res2);
-      console.log(res2.data.tasks)
-      setTasks(res2.data.tasks)
+      console.log(res2.data.tasks);
+      setTasks(res2.data.tasks);
     }
     getGoalDetails();
   }, []);
@@ -30,12 +30,9 @@ function GoalDetails(props) {
 
   const showMyTasks = () => {
     return tasks.map((eachTask) => {
-      return (
-        <li>{eachTask.name}</li>
-      )
-    }
-    )
-  }
+      return <li>{eachTask.name}</li>;
+    });
+  };
 
   return (
     <div>
@@ -47,13 +44,11 @@ function GoalDetails(props) {
       <AddATask {...props} />
 
       {/* <MyCalendar {...props} /> */}
-      <Fullcalendar {...props} />
+      {/* <Fullcalendar {...props} /> */}
 
       <SeeTask {...props} />
 
-      <div className="Taskss">
-        {showMyTasks()}
-      </div>
+      <div className="Taskss">{showMyTasks()}</div>
       {/**Update end dates onChange of calandar */}
 
       {/**Add/View Tasks to Goal don't forget to use the :goalid */}
