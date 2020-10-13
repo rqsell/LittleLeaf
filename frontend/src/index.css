@@ -309,3 +309,7 @@ body {
   color: rgb(77, 92, 77);
   font-weight: 800;
 }
+.taskArticle{
+  display: flex;
+  list-style: none;
+} 

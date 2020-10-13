@@ -12,7 +12,7 @@ function SeeTask(props) {
       if (res) {
         console.log(res);
         console.log("kittens");
-        setTasks(res.data.taskIds);
+        setTasks(res.data.tasks);
       } else {
         alert("res is undefined. Sign your butt in!");
       }
@@ -24,17 +24,17 @@ function SeeTask(props) {
     return tasks?.map((eachTask) => {
       console.log(eachTask);
       return (
-        <Link to={`/tasks/${eachTask._id}`}>
+        <div>
           <li class="eachTaskName">Task: {eachTask.name}</li>
           <p class="eachTaskDes">Description: {eachTask.description}</p>
-        </Link>
-      );
+          </div>
+      )
     });
   };
   return (
     <div>
       <h1>Tasks</h1>
-      {/* {showTasks()} */}
+      {showTasks()}
       {/* <Link to={`/tasks/${tasks._id}`}> */}
 
       {/* </Link> */}
