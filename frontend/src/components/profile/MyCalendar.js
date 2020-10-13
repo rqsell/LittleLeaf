@@ -6,6 +6,7 @@ import moment from "moment";
 console.log("yoyoyoyoy");
 function MyCalendar(props) {
   const [events, setEvents] = useState([]);
+  const [allEvents, setAllEvents] = useState([]);
   let theEvents = [];
   useEffect(() => {
     console.log("getAllMyEvents");
@@ -13,15 +14,19 @@ function MyCalendar(props) {
       let res = await actions.getAllMyEvents();
       console.log(res);
 
-      setEvents(res.data.goals);
+      setAllEvents(res.data.goals);
+      setEvents(theEvents);
       console.log(
         moment("2020-10-09T15:21:55.824Z").format("MMMM Do YYYY, h:mm:ss a")
       );
     }
     getAllMyEvents();
   }, []);
-  events.map((eachevent) => {
-    return theEvents.push(eachevent.name, eachevent.startDate);
+  allEvents.map((eachevent) => {
+    return theEvents.push({
+      title: eachevent.name,
+      date: moment(eachevent.startDate).format("MMMM Do YYYY, h:mm:ss a"),
+    });
   });
   console.log(theEvents);
   return (
