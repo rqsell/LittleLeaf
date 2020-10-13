@@ -14,7 +14,7 @@ function MyCalendar(props) {
     async function getAllMyEvents() {
       let res = await actions.getAllMyEvents()
       console.log(res)
-      let theEvents = [{ title: 'our first event', date: '2021-01-19' }]
+      let theEvents = [{ title: 'Ashtyns birthday!', date: '2021-01-19' }]
       setEvents(theEvents)
 
       console.log(moment('2020-10-09T15:21:55.824Z').format('MMMM Do YYYY, h:mm:ss a'))
