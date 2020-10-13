@@ -21,8 +21,8 @@ function GoalDetails(props) {
 
       let res2 = await actions.getTasks(props.match.params.goalid);
       console.log(res2);
-      console.log(res2.data.tasks)
-      setTasks(res2.data.tasks)
+      // console.log(res2.data.tasks)
+      // setTasks(res2.data.tasks)
     }
     getGoalDetails();
   }, []);
