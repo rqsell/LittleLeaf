@@ -69,7 +69,7 @@ function GoalDetails(props) {
             />
           </article>
           <article id="introbox">
-            <h4 class="goalsintro">Welcome to your Goals page!</h4>
+            <h4 class="goalsintro">Welcome to your Tasks page!</h4>
             <span className="goalPageText">
               Add a task to help you achieve your goal!
               <br></br>
@@ -80,17 +80,14 @@ function GoalDetails(props) {
               .
             </span>
             <br></br>
-            <h4 class="goalsintro">Add a New Goal to Your List!</h4>
+            <h4 class="goalsintro">Add a New Task to Your List!</h4>
           </article>
         </div>
         <AddATask {...props} />
 
-        {/* <MyCalendar {...props} /> */}
-        {/* <Fullcalendar {...props} /> */}
-
         <SeeTask {...props} />
 
-        <div className="Taskss">{showMyTasks()}</div>
+        {/* <div className="Taskss">{showMyTasks()}</div> */}
         {/**Update end dates onChange of calandar */}
 
         {/**Add/View Tasks to Goal don't forget to use the :goalid */}

@@ -64,7 +64,7 @@ const actions = {
     return await API.post("/AddTaskDB", data, resetHead());
   },
   getAllTasks: async (tasks) => {
-    console.log(tasks);
+    console.log(tasks, " debug 2");
     return await API.post("/getAllTasks", tasks, resetHead());
   },
 };
