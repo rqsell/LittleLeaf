@@ -1,24 +1,31 @@
-import React, { useState } from "react";
-import Calendar from "react-calendar";
-
+import React, { useEffect, useState } from "react";
+import actions from "../../api";
+import Fullcalendar from "../Fullcalendar"
+import moment from 'moment'
 // import AddToCalendar from "react-add-to-calendar";
 
 console.log("yoyoyoyoy")
 
 function MyCalendar(props) {
-  
-  const [date, setDate] = useState();
- 
-  const handleChange= (newDate) => {
 
-    setDate(newDate)
-      console.log(newDate)
-  }
-  console.log(`to go the db atn update goal with id = ${props.match.params.goalid} with`, date )
+  const [events, setEvents] = useState([]);
+  useEffect(() => {
+    console.log('getAllMyEvents')
+    async function getAllMyEvents() {
+      let res = await actions.getAllMyEvents()
+      console.log(res)
+      let theEvents = [{ title: 'our first event', date: '2021-01-19' }]
+      setEvents(theEvents)
+
+      console.log(moment('2020-10-09T15:21:55.824Z').format('MMMM Do YYYY, h:mm:ss a'))
+    }
+    getAllMyEvents()
+  }, [])
+
 
   return (
     <div>
-      <Calendar onChange={handleChange} value={date}/>.
+      <Fullcalendar events={events} />.
       {/* <AddToCalendar event={this.state.event} /> */}
     </div>
   );

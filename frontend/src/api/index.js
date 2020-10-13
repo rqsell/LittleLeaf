@@ -27,6 +27,10 @@ const API = axios.create({
 });
 
 const actions = {
+  getAllMyEvents: async () => {
+    return await API.get(`/getAllEvents`, resetHead());
+  },
+
   getUser: async () => {
     return await API.get(`/user`, resetHead());
   },
