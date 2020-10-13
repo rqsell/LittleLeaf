@@ -41,14 +41,14 @@ function AddATask(props) {
         <label for="Start Date">Task Start Date </label>
         <input
           onChange={(e) => setStart(e.target.value)}
-          type="text"
+          type="date"
           name="Start"
         />
 
         <label for="End Date">Task Due Date</label>
         <input
           onChange={(e) => setEnd(e.target.value)}
-          type="text"
+          type="date"
           name="End"
         />
 
