@@ -7,13 +7,14 @@ function SeeTask(props) {
 
   useEffect(() => {
     async function getTasks() {
+      console.log(props.match.params.goalid, " debug 1");
       let res = await actions.getAllTasks({
-        taskid: props.match.params.goalid,
+        goalid: props.match.params.goalid,
       });
       if (res) {
         console.log(res);
         console.log("kittens");
-        setTasks(res.data.taskIds);
+        setTasks(res.data.tasks);
       } else {
         alert("res is undefined. Sign your butt in!");
       }
