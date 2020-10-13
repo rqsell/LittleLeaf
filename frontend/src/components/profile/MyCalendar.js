@@ -6,7 +6,6 @@ import moment from "moment";
 console.log("yoyoyoyoy");
 function MyCalendar(props) {
   const [events, setEvents] = useState([]);
-  const [allEvents, setAllEvents] = useState([]);
   let theEvents = [];
   useEffect(() => {
     console.log("getAllMyEvents");
@@ -14,21 +13,52 @@ function MyCalendar(props) {
       let res = await actions.getAllMyEvents();
       console.log(res);
 
-      setAllEvents(res.data.goals);
+      res.data.goals.map((eachevent) => {
+        theEvents.push({
+              title: eachevent.name,
+              date: moment(eachevent.startDate).format("YYYY-MM-DD")
+              })
+      })
+      res.data.tasks.map((eachevent) => {
+        theEvents.push({
+              title: eachevent.name,
+              date: moment(eachevent.startDate).format("YYYY-MM-DD")
+              })
+      })
+
+      // for(let i = 0; i<res.data.goals.length; i++){
+      //   let eachevent=res.data.goals[i]
+      //   theEvents.push(
+      //     {
+      //     title: eachevent.name,
+      //     date: moment(eachevent.startDate).format("YYYY-MM-DD")
+      //     }
+      //   )
+      // }
+
+      // for(let i = 0; i<res.data.tasks.length; i++){
+      //   let eachevent=res.data.tasks[i]
+      //   theEvents.push(
+      //     {
+      //     title: eachevent.name,
+      //     date: moment(eachevent.startDate).format("YYYY-MM-DD")
+      //     }
+      //   )
+      // }
+    
       setEvents(theEvents);
       console.log(
-        moment("2020-10-09T15:21:55.824Z").format("MMMM Do YYYY, h:mm:ss a")
+        moment("2020-10-09T15:21:55.824Z").format("YYYY-MM-DD")
       );
+      // allEvents.map((eachevent) => {
+      //   return theEvents.push({
+      //     title: eachevent.name,
+      //     date: moment(eachevent.startDate).format("YYYY-MM-DD"),
+      //   });
     }
     getAllMyEvents();
   }, []);
-  allEvents.map((eachevent) => {
-    return theEvents.push({
-      title: eachevent.name,
-      date: moment(eachevent.startDate).format("MMMM Do YYYY, h:mm:ss a"),
-    });
-  });
-  console.log(theEvents);
+  
   return (
     <div>
       <Fullcalendar events={events} />

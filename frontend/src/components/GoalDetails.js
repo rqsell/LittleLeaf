@@ -21,8 +21,13 @@ function GoalDetails(props) {
 
       let res2 = await actions.getTasks(props.match.params.goalid);
       console.log(res2);
+<<<<<<< HEAD
       console.log(res2.data.tasks);
       setTasks(res2.data.tasks);
+=======
+      // console.log(res2.data.tasks)
+      // setTasks(res2.data.tasks)
+>>>>>>> 9b466524699a80577f1cb257f8c3dc2988e6dc8f
     }
     getGoalDetails();
   }, []);
