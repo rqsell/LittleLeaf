@@ -36,22 +36,17 @@ function GoalDetails(props) {
 
   return (
     <div>
-      <h1>{goalDetail.name}</h1>
-      <p>{goalDetail.description}</p>
-      <p>{goalDetail.startDate}</p>
-      <p>{goalDetail.endDate}</p>
-      <h3>Add the Tasks neccessary to achieve {goalDetail.name}</h3>
-      <AddATask {...props} />
+      
+      <h3 className="taskyHead">Add the Tasks neccessary to achieve {goalDetail.name}</h3>
+      <article className="taskArticle">
+        <AddATask {...props} />
+        <SeeTask {...props} />
+        <div className="Taskss">{showMyTasks()}</div>
+        </article>
 
       {/* <MyCalendar {...props} /> */}
       {/* <Fullcalendar {...props} /> */}
 
-      <SeeTask {...props} />
-
-      <div className="Taskss">{showMyTasks()}</div>
-      {/**Update end dates onChange of calandar */}
-
-      {/**Add/View Tasks to Goal don't forget to use the :goalid */}
     </div>
   );
 }
