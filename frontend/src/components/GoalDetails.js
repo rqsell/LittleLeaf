@@ -3,6 +3,7 @@ import actions from "../api";
 import MyCalendar from "./profile/MyCalendar";
 import AddATask from "./AddATask";
 import SeeTask from "./SeeTask.js";
+import Fullcalendar from "./Fullcalendar"
 
 function GoalDetails(props) {
   const [goalDetail, setGoalDetail] = useState([]);
@@ -45,7 +46,8 @@ function GoalDetails(props) {
       <h3>Add the Tasks neccessary to achieve {goalDetail.name}</h3>
       <AddATask {...props} />
 
-      <MyCalendar {...props} />
+      {/* <MyCalendar {...props} /> */}
+      <Fullcalendar {...props} />
 
       <SeeTask {...props} />
 
