@@ -47,7 +47,7 @@ function GoalDetails(props) {
       <AddATask {...props} />
 
       {/* <MyCalendar {...props} /> */}
-      <Fullcalendar {...props} />
+      {/* <Fullcalendar {...props} /> */}
 
       <SeeTask {...props} />
 
