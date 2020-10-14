@@ -8,14 +8,13 @@ const Home = (props) => {
 
   return (
     <div>
-      <header>
-        <div className="textInHeader">
-          <h3 className="title1">little leaf</h3>
-          <br />
-          <br />
-          <h4 className="title2">big tree</h4>
-        </div>
-      </header>
+      <div className="textInHeader">
+        <h3 className="title1">little leaf</h3>
+        <br />
+        <br />
+        <h4 className="title2">big tree</h4>
+      </div>
+
       <div className="homeIntro">
         <h1 id="homeIT1">Let's Grow Together</h1>
         <h2 id="homeIT2">We're here to help you reach your goals!</h2>

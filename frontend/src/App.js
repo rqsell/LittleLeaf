@@ -2,6 +2,7 @@ import React, { Component, Fragment, useState, useEffect } from "react";
 import { Switch, Route, NavLink, useHistory } from "react-router-dom";
 import TheContext from "./TheContext";
 import Home from "./components/Home";
+import { Link } from "react-router-dom";
 import NotFound from "./components/404/NotFound.js";
 import SignUp from "./components/auth/SignUp";
 import LogIn from "./components/auth/LogIn";
@@ -14,13 +15,13 @@ import GoogleAuthLogin from "./components/auth/GoogleAuthLogin";
 import "bootstrap/dist/css/bootstrap.min.css";
 import AddATask from "./components/AddATask";
 import MyCalendar from "./components/profile/MyCalendar";
-// import "bootstrap/scss/bootstrap";
 import {
   NotificationContainer,
   NotificationManager,
 } from "react-notifications";
 const App = () => {
   let [user, setUser] = useState(null);
+  const [open, setOpen] = useState(false);
   useEffect(() => {
     async function getUser() {
       let user = await actions.getUser();
@@ -36,6 +37,31 @@ const App = () => {
   const history = useHistory();
   return (
     <TheContext.Provider value={{ history, user, setUser }}>
+      <nav>
+        <img
+          src="./images/Copy of Little Leaf Big Tree Logo.png"
+          alt="our logo"
+          id={open ? "clickedlogo" : ""}
+          class="logo"
+          onClick={() => setOpen(!open)}
+        />
+
+        <ul className="hamburgerMenu" id={open ? "clickedmenu" : ""}>
+          <div className="x" onClick={() => setOpen(!open)}>
+            X
+          </div>
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <li>Home</li>
+          </Link>
+          <Link to="/AddAGoal" style={{ textDecoration: "none" }}>
+            <li>Add a Goal</li>
+          </Link>
+          <Link to="/MyCalendar" style={{ textDecoration: "none" }}>
+            <li>My Calendar</li>
+          </Link>
+        </ul>
+      </nav>
+
       {user?.email}
       <Switch>
         <Route exact path="/" render={(props) => <Home {...props} />} />
@@ -76,8 +102,8 @@ const App = () => {
         />
       </Switch>
       <div id="google-auth">
-        {!user && <GoogleAuth setUser={setUser} class="googleAuth" />}
-        {!user && <GoogleAuthLogin setUser={setUser} class="googleAuth" />}
+        {!user && <GoogleAuth setUser={setUser} className="googleAuth" />}
+        {!user && <GoogleAuthLogin setUser={setUser} className="googleAuth" />}
       </div>
       <NotificationContainer />
     </TheContext.Provider>
