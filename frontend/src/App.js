@@ -37,6 +37,7 @@ const App = () => {
   const history = useHistory();
   return (
     <TheContext.Provider value={{ history, user, setUser }}>
+      {user?.email}
       <nav>
         <img
           src="./images/Copy of Little Leaf Big Tree Logo.png"
@@ -62,7 +63,6 @@ const App = () => {
         </ul>
       </nav>
 
-      {user?.email}
       <Switch>
         <Route exact path="/" render={(props) => <Home {...props} />} />
         <Route
