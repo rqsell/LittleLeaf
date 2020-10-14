@@ -26,7 +26,7 @@ const debug = require("debug")(
 );
 
 const app = express();
-
+console.log("twilight")
 app.use(
   cors({
     credentials: true,
