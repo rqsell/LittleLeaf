@@ -74,7 +74,7 @@ function GoalDetails(props) {
 
 {/* WELCOME MESSAGES */}
           <article id="introbox">
-            <h4 class="goalsintro">Welcome to your Goals page!</h4>
+            <h4 class="goalsintro">Welcome to your Tasks page!</h4>
             <span className="goalPageText">
               Add a task to help you achieve your goal!
               <br></br>
