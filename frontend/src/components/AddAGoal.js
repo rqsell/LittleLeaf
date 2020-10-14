@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 // import Form from 'react-bootstrap/Form'
 import { Link } from "react-router-dom";
+import lilTree from "../public/images/Copy of Little Leaf Big Tree Logo.png";
 import actions from "../api";
 import SeeGoal from "./SeeGoal";
 
@@ -57,7 +58,7 @@ function AddAGoal(props) {
         <div className="goalIntro">
           <article id="logobox">
             <img
-              src="./images/Copy of Little Leaf Big Tree Logo.png"
+              src={lilTree}
               alt="our logo"
               id={open ? "clickedlogo" : ""}
               class="logo2"
@@ -87,21 +88,18 @@ function AddAGoal(props) {
             type="text"
             name="Name"
           />
-
           <label for="Start Date">Goal Start Date </label>
           <input
             onChange={(e) => setStart(e.target.value)}
             type="date"
             name="Start"
           />
-
           <label for="End Date">Goal Due Date</label>
           <input
             onChange={(e) => setEnd(e.target.value)}
             type="date"
             name="End"
           />
-
           <label for="Description">Description</label>
           <input
             onChange={(e) => setDescription(e.target.value)}
