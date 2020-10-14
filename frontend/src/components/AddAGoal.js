@@ -34,37 +34,8 @@ function AddAGoal(props) {
 
   return (
     <div>
-      <ul className="hamburgerMenu" id={open ? "clickedmenu" : ""}>
-        {/* <Menu> */}
-        <div className="x" onClick={() => setOpen(!open)}>
-          X
-        </div>
-        <Link to="/" style={{ textDecoration: "none" }}>
-          <li>Home</li>
-        </Link>
-        <Link to="/AddAGoal" style={{ textDecoration: "none" }}>
-          <li>Add a Goal</li>
-        </Link>
-        <Link style={{ textDecoration: "none" }}>
-          <li>Log In</li>
-        </Link>
-        <li>About Us</li>
-        <li>Profile</li>
-        {/* </Menu> */}
-      </ul>
-      {/* ) : null} */}
-
       <div className="addAGoalDiv">
         <div className="goalIntro">
-          <article id="logobox">
-            <img
-              src={lilTree}
-              alt="our logo"
-              id={open ? "clickedlogo" : ""}
-              class="logo2"
-              onClick={() => setOpen(!open)}
-            />
-          </article>
           <article id="introbox">
             <h4 class="goalsintro">Welcome to your Goals page!</h4>
             <span className="goalPageText">
