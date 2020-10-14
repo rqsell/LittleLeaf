@@ -5,7 +5,7 @@ import Home from "./components/Home";
 import { Link } from "react-router-dom";
 import NotFound from "./components/404/NotFound.js";
 import SignUp from "./components/auth/SignUp";
-import LogIn from "./components/auth/LogIn";
+import LogIn from "./components/profile/Login";
 import Profile from "./components/profile/Profile";
 import GoalDetails from "./components/GoalDetails";
 import AddAGoal from "./components/AddAGoal";
