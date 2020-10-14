@@ -4,7 +4,7 @@ import TheContext from "./TheContext";
 import Home from "./components/Home";
 import NotFound from "./components/404/NotFound.js";
 import SignUp from "./components/auth/SignUp";
-import LogIn from "./components/auth/LogIn";
+import LogIn from "./components/profile/Login";
 import Profile from "./components/profile/Profile";
 import GoalDetails from "./components/GoalDetails";
 import AddAGoal from "./components/AddAGoal";
