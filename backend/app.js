@@ -26,13 +26,20 @@ const debug = require("debug")(
 );
 
 const app = express();
-console.log("twilight")
-app.use(
-  cors({
-    credentials: true,
-    origin: ["http://localhost:3000", "https://littleleaf.netlify.app"] //Swap this with the client url
-  })
-);
+console.log("twilight99999")
+// app.use(
+//   cors({
+//     credentials: true,
+//     origin: ["http://localhost:3000", "https://littleleaf.netlify.app"] //Swap this with the client url
+//   })
+// );
+app.use(cors({
+  origin: function(origin, callback){
+    return callback(null, true);
+  },
+  optionsSuccessStatus: 200,
+  credentials: true
+}));
 
 app.use(
   session({
