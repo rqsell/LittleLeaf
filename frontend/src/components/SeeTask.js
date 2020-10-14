@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import AddATask from "./AddATask";
 import actions from "../api";
 function SeeTask(props) {
   const [tasks, setTasks] = useState([]);
 
   useEffect(() => {
     async function getTasks() {
+      console.log(props.match.params.goalid, " debug 1");
       let res = await actions.getAllTasks({
-        taskid: props.match.params.goalid,
+        goalid: props.match.params.goalid,
       });
       if (res) {
         console.log(res);
         console.log("kittens");
-        setTasks(res.data.taskIds);
+        setTasks(res.data.tasks);
       } else {
         alert("res is undefined. Sign your butt in!");
       }
@@ -33,8 +35,8 @@ function SeeTask(props) {
   };
   return (
     <div>
-      <h1>Tasks</h1>
-      {/* {showTasks()} */}
+      {/* <AddATask /> */}
+      {showTasks()}
       {/* <Link to={`/tasks/${tasks._id}`}> */}
 
       {/* </Link> */}

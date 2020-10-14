@@ -30,12 +30,21 @@ nav a {
   width: auto;
   margin-left: 1.5vw;
 }
+.logo3 {
+  height: 40vh;
+  width: auto;
+  margin-left: 1 vw;
+}
 .goalIntro {
   display: flex;
   align-items: center;
 }
 #logobox {
   width: 10%;
+  height: auto;
+}
+#logobox2 {
+  width: 5%%;
   height: auto;
 }
 
@@ -301,10 +310,20 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: center;
   align-items: center;
   /* border: 3px solid black; */
 }
-.goalPageText{
+#introbox2 {
+  margin-left: 20vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  align-items: center;
+  /* border: 3px solid black; */
+}
+.goalPageText {
   font-family: "Open Sans", sans-serif;
   color: rgb(77, 92, 77);
   font-weight: 800;
