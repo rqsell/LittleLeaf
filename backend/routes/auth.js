@@ -91,13 +91,13 @@ router.get("/GetAllGoal", verifyToken, (req, res, next) => {
 });
 
 router.post("/getAllTasks", verifyToken, (req, res, next) => {
-  console.log(req.body, "erere");
+  console.log(req.body, "debug 3");
   jwt.verify(req.token, "secretkey", (err, authData) => {
     if (err) {
       res.status(403).json(err);
     } else {
-      Tasks.find({ goalId: authData.user._id }).then((tasks) => {
-        console.log(tasks, "ererere");
+      Tasks.find({ goalId: req.body.goalid }).then((tasks) => {
+        console.log(tasks, "debug 4");
         res.json({ tasks });
       });
     }
