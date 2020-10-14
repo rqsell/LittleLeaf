@@ -60,8 +60,18 @@ const App = () => {
           <Link to="/MyCalendar" style={{ textDecoration: "none" }}>
             <li>My Calendar</li>
           </Link>
+          <Link to="/log-in" style={{ textDecoration: "none" }}>
+            <li>Log In/Sign Up</li>
+          </Link>
         </ul>
       </nav>
+
+      <div className="textInHeader">
+        <h3 className="title1">little leaf</h3>
+        <br />
+        <br />
+        <h4 className="title2">big tree</h4>
+      </div>
 
       <Switch>
         <Route exact path="/" render={(props) => <Home {...props} />} />

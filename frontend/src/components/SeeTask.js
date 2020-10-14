@@ -26,15 +26,16 @@ function SeeTask(props) {
     return tasks?.map((eachTask) => {
       console.log(eachTask);
       return (
-        <Link to={`/tasks/${eachTask._id}`}>
+        <div>
           <li class="eachTaskName">Task: {eachTask.name}</li>
           <p class="eachTaskDes">Description: {eachTask.description}</p>
-        </Link>
-      );
+          </div>
+      )
     });
   };
   return (
     <div>
+      <h1>Tasks</h1>
       {/* <AddATask /> */}
       {showTasks()}
       {/* <Link to={`/tasks/${tasks._id}`}> */}

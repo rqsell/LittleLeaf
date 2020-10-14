@@ -8,12 +8,12 @@ const Home = (props) => {
 
   return (
     <div>
-      <div className="textInHeader">
+      {/* <div className="textInHeader">
         <h3 className="title1">little leaf</h3>
         <br />
         <br />
         <h4 className="title2">big tree</h4>
-      </div>
+      </div> */}
 
       <div className="homeIntro">
         <h1 id="homeIT1">Let's Grow Together</h1>
