@@ -8,46 +8,13 @@ const Home = (props) => {
 
   return (
     <div>
-      <header className="headerTotal">
-        <nav>
-          <img
-            src="./images/Copy of Little Leaf Big Tree Logo.png"
-            alt="our logo"
-            id={open ? "clickedlogo" : ""}
-            class="logo"
-            onClick={() => setOpen(!open)}
-          />
+      <div className="textInHeader">
+        <h3 className="title1">little leaf</h3>
+        <br />
+        <br />
+        <h4 className="title2">big tree</h4>
+      </div>
 
-          {/* {open ? ( */}
-
-          <ul className="hamburgerMenu" id={open ? "clickedmenu" : ""}>
-            {/* <Menu> */}
-            <div className="x" onClick={() => setOpen(!open)}>
-              X
-            </div>
-            <Link to="/" style={{ textDecoration: "none" }}>
-              <li>Home</li>
-            </Link>
-            <Link to="/AddAGoal" style={{ textDecoration: "none" }}>
-              <li>Add a Goal</li>
-            </Link>
-            <Link style={{ textDecoration: "none" }}>
-              <li>Log In</li>
-            </Link>
-            <li>About Us</li>
-            <li>Profile</li>
-            {/* </Menu> */}
-          </ul>
-          {/* ) : null} */}
-        </nav>
-
-        <div className="textInHeader">
-          <h3 className="title1">little leaf</h3>
-          <br />
-          <br />
-          <h4 className="title2">big tree</h4>
-        </div>
-      </header>
       <div className="homeIntro">
         <h1 id="homeIT1">Let's Grow Together</h1>
         <h2 id="homeIT2">We're here to help you reach your goals!</h2>

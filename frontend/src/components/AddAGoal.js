@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 // import Form from 'react-bootstrap/Form'
 import { Link } from "react-router-dom";
+import lilTree from "../public/images/Copy of Little Leaf Big Tree Logo.png";
 import actions from "../api";
 import SeeGoal from "./SeeGoal";
 
@@ -33,37 +34,8 @@ function AddAGoal(props) {
 
   return (
     <div>
-      <ul className="hamburgerMenu" id={open ? "clickedmenu" : ""}>
-        {/* <Menu> */}
-        <div className="x" onClick={() => setOpen(!open)}>
-          X
-        </div>
-        <Link to="/" style={{ textDecoration: "none" }}>
-          <li>Home</li>
-        </Link>
-        <Link to="/AddAGoal" style={{ textDecoration: "none" }}>
-          <li>Add a Goal</li>
-        </Link>
-        <Link style={{ textDecoration: "none" }}>
-          <li>Log In</li>
-        </Link>
-        <li>About Us</li>
-        <li>Profile</li>
-        {/* </Menu> */}
-      </ul>
-      {/* ) : null} */}
-
       <div className="addAGoalDiv">
         <div className="goalIntro">
-          <article id="logobox">
-            <img
-              src="./images/Copy of Little Leaf Big Tree Logo.png"
-              alt="our logo"
-              id={open ? "clickedlogo" : ""}
-              class="logo2"
-              onClick={() => setOpen(!open)}
-            />
-          </article>
           <article id="introbox">
             <h4 class="goalsintro">Welcome to your Goals page!</h4>
             <span className="goalPageText">
@@ -87,21 +59,18 @@ function AddAGoal(props) {
             type="text"
             name="Name"
           />
-
           <label for="Start Date">Goal Start Date </label>
           <input
             onChange={(e) => setStart(e.target.value)}
             type="date"
             name="Start"
           />
-
           <label for="End Date">Goal Due Date</label>
           <input
             onChange={(e) => setEnd(e.target.value)}
             type="date"
             name="End"
           />
-
           <label for="Description">Description</label>
           <input
             onChange={(e) => setDescription(e.target.value)}
