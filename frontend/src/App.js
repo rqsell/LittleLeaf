@@ -37,43 +37,42 @@ const App = () => {
   const history = useHistory();
   return (
     <div>
-      {user?.email}
-      <nav>
-        <img
-          src="./images/Copy of Little Leaf Big Tree Logo.png"
-          alt="our logo"
-          id={open ? "clickedlogo" : ""}
-          class="logo"
-          onClick={() => setOpen(!open)}
-        />
-
-        <ul className="hamburgerMenu" id={open ? "clickedmenu" : ""}>
-          <div className="x" onClick={() => setOpen(!open)}>
-            X
-          </div>
-          <Link to="/" style={{ textDecoration: "none" }}>
-            <li>Home</li>
-          </Link>
-          <Link to="/AddAGoal" style={{ textDecoration: "none" }}>
-            <li>Add a Goal</li>
-          </Link>
-          <Link to="/MyCalendar" style={{ textDecoration: "none" }}>
-            <li>My Calendar</li>
-          </Link>
-          <Link to="/log-in" style={{ textDecoration: "none" }}>
-            <li>Log In/Sign Up</li>
-          </Link>
-        </ul>
-      </nav>
-
-      <div className="textInHeader">
-        <h3 className="title1">little leaf</h3>
-        <br />
-        <br />
-        <h4 className="title2">big tree</h4>
-      </div>
-
       <TheContext.Provider value={{ history, user, setUser }}>
+        {user?.email}
+        <nav>
+          <img
+            src="./images/Copy of Little Leaf Big Tree Logo.png"
+            alt="our logo"
+            id={open ? "clickedlogo" : ""}
+            class="logo"
+            onClick={() => setOpen(!open)}
+          />
+
+          <ul className="hamburgerMenu" id={open ? "clickedmenu" : ""}>
+            <div className="x" onClick={() => setOpen(!open)}>
+              X
+            </div>
+            <Link to="/" style={{ textDecoration: "none" }}>
+              <li>Home</li>
+            </Link>
+            <Link to="/AddAGoal" style={{ textDecoration: "none" }}>
+              <li>Add a Goal</li>
+            </Link>
+            <Link to="/MyCalendar" style={{ textDecoration: "none" }}>
+              <li>My Calendar</li>
+            </Link>
+            <Link to="/log-in" style={{ textDecoration: "none" }}>
+              <li>Log In/Sign Up</li>
+            </Link>
+          </ul>
+        </nav>
+
+        <div className="textInHeader">
+          <h3 className="title1">little leaf</h3>
+          <br />
+          <br />
+          <h4 className="title2">big tree</h4>
+        </div>
         <Switch>
           <Route exact path="/" render={(props) => <Home {...props} />} />
           <Route
