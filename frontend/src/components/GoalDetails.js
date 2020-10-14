@@ -76,12 +76,12 @@ function GoalDetails(props) {
           <article id="introbox">
             <h4 class="goalsintro">Welcome to your Tasks page!</h4>
             <span className="goalPageText">
-              Add a task to help you achieve your goal!
+              Add tasks to help you achieve your goal!
               <br></br>
-              The task will assist you in achieving your goal {
+              The task(s) will assist you in achieving your goal: {
                 goalDetail.name
-              }{" "}
-              in which you will {goalDetail.description} by {goalDetail.endDate}
+              }
+              {/* in which you will {goalDetail.description} by {goalDetail.endDate} */}
             </span>
             <br></br>
             <h4 class="goalsintro">Add a New Task to Your List!</h4>
