@@ -48,6 +48,9 @@ function AddAGoal(props) {
             <h4 class="goalsintro">Add a New Goal to Your List!</h4>
           </article>
         </div>
+    
+
+<section className="tanAddGoal">
         <form
           onSubmit={handleSubmit}
           style={{ padding: "80px" }}
@@ -88,8 +91,10 @@ function AddAGoal(props) {
           <br />
           <button id="addGoalButton">Add Goal</button>
         </form>
+        <p className="seeGoalP"><SeeGoal /></p>
+        </section>
       </div>
-      <SeeGoal />
+      
     </div>
   );
 }
