@@ -37,6 +37,8 @@ function GoalDetails(props) {
 
   return (
     <div>
+{/* THE MENU */}
+      <article id="theMenu">
       <ul className="hamburgerMenu" id={open ? "clickedmenu" : ""}>
         {/* <Menu> */}
         <div className="x" onClick={() => setOpen(!open)}>
@@ -56,7 +58,8 @@ function GoalDetails(props) {
         {/* </Menu> */}
       </ul>
       {/* ) : null} */}
-
+      </article>
+{/* THE MENU/THE LOGO */}
       <div className="addAGoalDiv">
         <div className="goalIntro">
           <article id="logobox2">
@@ -68,6 +71,8 @@ function GoalDetails(props) {
               onClick={() => setOpen(!open)}
             />
           </article>
+
+{/* WELCOME MESSAGES */}
           <article id="introbox">
             <h4 class="goalsintro">Welcome to your Tasks page!</h4>
             <span className="goalPageText">
@@ -77,21 +82,28 @@ function GoalDetails(props) {
                 goalDetail.name
               }{" "}
               in which you will {goalDetail.description} by {goalDetail.endDate}
-              .
             </span>
-            <br></br>
-            <h4 class="goalsintro">Add a New Task to Your List!</h4>
-          </article>
-        </div>
-        <AddATask {...props} />
-
-        <SeeTask {...props} />
-
-        {/* <div className="Taskss">{showMyTasks()}</div> */}
-        {/**Update end dates onChange of calandar */}
-
-        {/**Add/View Tasks to Goal don't forget to use the :goalid */}
+            </article>
+            </div>
       </div>
+{/* HERE'S THE TASKY STUFF! */}
+<br/>
+           
+          <h3 className="taskyHead">Add the Tasks neccessary to achieve {goalDetail.name}</h3>
+      <article className="taskArticle">
+
+{/* ADD THE TASK (FORM) */}
+        <AddATask {...props} />
+{/* SEE TASK FUNX ALLOWS US TO MAP THROUGH THE TASKS IN DB */}
+        <SeeTask {...props} />
+{/* SHOWMYTASKS ALLOWS US TO LIST THE TASKS ON PAGE */}
+        <div className="Taskss">{showMyTasks()}</div>
+        </article>
+        
+
+        {/* <MyCalendar {...props} /> */}
+        {/* <Fullcalendar {...props} /> */}
+              
     </div>
   );
 }
