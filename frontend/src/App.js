@@ -36,8 +36,8 @@ const App = () => {
   };
   const history = useHistory();
   return (
-    <TheContext.Provider value={{ history, user, setUser }}>
-    {user?.email}
+    <div>
+      {user?.email}
       <nav>
         <img
           src="./images/Copy of Little Leaf Big Tree Logo.png"
@@ -72,51 +72,55 @@ const App = () => {
         <br />
         <h4 className="title2">big tree</h4>
       </div>
-      
-      <Switch>
-        <Route exact path="/" render={(props) => <Home {...props} />} />
-        <Route
-          exact
-          path="/sign-up"
-          render={(props) => <SignUp {...props} setUser={setUser} />}
-        />
-        <Route
-          exact
-          path="/log-in"
-          render={(props) => <LogIn {...props} setUser={setUser} />}
-        />
-        <Route
-          exact
-          path="/profile"
-          render={(props) => <Profile {...props} />}
-        />
-        <Route
-          exact
-          path="/AddAGoal"
-          render={(props) => <AddAGoal {...props} />}
-        />
-        <Route
-          exact
-          path="/goals/:goalid"
-          render={(props) => <GoalDetails {...props} />}
-        />
-        <Route
-          exact
-          path="/AddATask"
-          render={(props) => <AddATask {...props} />}
-        />
-        <Route
-          exact
-          path="/MyCalendar"
-          render={(props) => <MyCalendar {...props} />}
-        />
-      </Switch>
-      <div id="google-auth">
-        {!user && <GoogleAuth setUser={setUser} className="googleAuth" />}
-        {!user && <GoogleAuthLogin setUser={setUser} className="googleAuth" />}
-      </div>
-      <NotificationContainer />
-    </TheContext.Provider>
+
+      <TheContext.Provider value={{ history, user, setUser }}>
+        <Switch>
+          <Route exact path="/" render={(props) => <Home {...props} />} />
+          <Route
+            exact
+            path="/sign-up"
+            render={(props) => <SignUp {...props} setUser={setUser} />}
+          />
+          <Route
+            exact
+            path="/log-in"
+            render={(props) => <LogIn {...props} setUser={setUser} />}
+          />
+          <Route
+            exact
+            path="/profile"
+            render={(props) => <Profile {...props} />}
+          />
+          <Route
+            exact
+            path="/AddAGoal"
+            render={(props) => <AddAGoal {...props} />}
+          />
+          <Route
+            exact
+            path="/goals/:goalid"
+            render={(props) => <GoalDetails {...props} />}
+          />
+          <Route
+            exact
+            path="/AddATask"
+            render={(props) => <AddATask {...props} />}
+          />
+          <Route
+            exact
+            path="/MyCalendar"
+            render={(props) => <MyCalendar {...props} />}
+          />
+        </Switch>
+        <div id="google-auth">
+          {!user && <GoogleAuth setUser={setUser} className="googleAuth" />}
+          {!user && (
+            <GoogleAuthLogin setUser={setUser} className="googleAuth" />
+          )}
+        </div>
+        <NotificationContainer />
+      </TheContext.Provider>
+    </div>
   );
 };
 export default App;
