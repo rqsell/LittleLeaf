@@ -30,7 +30,7 @@ console.log("twilight")
 app.use(
   cors({
     credentials: true,
-    origin: ["http://localhost:3000", "https://littleleaf.netlify.app", "https://littleleafbigtree.herokuapp.com"], //Swap this with the client url
+    origin: ["http://localhost:3000", "https://littleleaf.netlify.app"] //Swap this with the client url
   })
 );
 

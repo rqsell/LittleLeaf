@@ -155,6 +155,7 @@ function verifyToken(req, res, next) {
     // Next middleware
     next();
   } else {
+    console.log(req.headers, " octopus")
     // Forbidden
     res.status(403); //.json({err:'not logged in'});
   }
