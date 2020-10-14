@@ -83,29 +83,20 @@ function GoalDetails(props) {
               }{" "}
               in which you will {goalDetail.description} by {goalDetail.endDate}
             </span>
-            </article>
-            </div>
-      </div>
-{/* HERE'S THE TASKY STUFF! */}
-<br/>
-           
-          <h3 className="taskyHead">Add the Tasks neccessary to achieve {goalDetail.name}</h3>
-      <article className="taskArticle">
-
-{/* ADD THE TASK (FORM) */}
+            <br></br>
+            <h4 class="goalsintro">Add a New Task to Your List!</h4>
+          </article>
+        </div>
         <AddATask {...props} />
-{/* SEE TASK FUNX ALLOWS US TO MAP THROUGH THE TASKS IN DB */}
+
         <SeeTask {...props} />
-{/* SHOWMYTASKS ALLOWS US TO LIST THE TASKS ON PAGE */}
-        <div className="Taskss">{showMyTasks()}</div>
-        </article>
-        
+
+        {/* <div className="Taskss">{showMyTasks()}</div> */}
+        {/**Update end dates onChange of calandar */}
 
         {/* <MyCalendar {...props} /> */}
         {/* <Fullcalendar {...props} /> */}
-              
+        </div>
     </div>
-  );
-}
-
+  )}
 export default GoalDetails;
