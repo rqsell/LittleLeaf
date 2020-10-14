@@ -8,39 +8,7 @@ const Home = (props) => {
 
   return (
     <div>
-      <header className="headerTotal">
-        <nav>
-          <img
-            src="./images/Copy of Little Leaf Big Tree Logo.png"
-            alt="our logo"
-            id={open ? "clickedlogo" : ""}
-            class="logo"
-            onClick={() => setOpen(!open)}
-          />
-
-          {/* {open ? ( */}
-
-          <ul className="hamburgerMenu" id={open ? "clickedmenu" : ""}>
-            {/* <Menu> */}
-            <div className="x" onClick={() => setOpen(!open)}>
-              X
-            </div>
-            <Link to="/" style={{ textDecoration: "none" }}>
-              <li>Home</li>
-            </Link>
-            <Link to="/AddAGoal" style={{ textDecoration: "none" }}>
-              <li>Add a Goal</li>
-            </Link>
-            <Link style={{ textDecoration: "none" }}>
-              <li>Log In</li>
-            </Link>
-            <li>About Us</li>
-            <li>Profile</li>
-            {/* </Menu> */}
-          </ul>
-          {/* ) : null} */}
-        </nav>
-
+      <header>
         <div className="textInHeader">
           <h3 className="title1">little leaf</h3>
           <br />

@@ -19,10 +19,8 @@ import {
   NotificationContainer,
   NotificationManager,
 } from "react-notifications";
-
 const App = () => {
   let [user, setUser] = useState(null);
-
   useEffect(() => {
     async function getUser() {
       let user = await actions.getUser();
@@ -31,18 +29,14 @@ const App = () => {
     }
     getUser();
   }, []);
-
   const logOut = async () => {
     let res = await actions.logOut();
     setUser(null);
   };
-
   const history = useHistory();
-
   return (
     <TheContext.Provider value={{ history, user, setUser }}>
       {user?.email}
-
       <Switch>
         <Route exact path="/" render={(props) => <Home {...props} />} />
         <Route
@@ -70,7 +64,6 @@ const App = () => {
           path="/goals/:goalid"
           render={(props) => <GoalDetails {...props} />}
         />
-
         <Route
           exact
           path="/AddATask"
@@ -86,7 +79,6 @@ const App = () => {
         {!user && <GoogleAuth setUser={setUser} class="googleAuth" />}
         {!user && <GoogleAuthLogin setUser={setUser} class="googleAuth" />}
       </div>
-
       <NotificationContainer />
     </TheContext.Provider>
   );
