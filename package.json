@@ -7,6 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "preinstall": "echo --- preinstall --- && cd backend && npm install && cd ../frontend && npm install && npm run build && cd ..",
     "start": "echo --- start --- && cd backend && npm start"
+  },
+  "dependencies": {
+    "react-burger-menu": "^2.9.0"
   }
-  
 }
