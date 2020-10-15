@@ -3,6 +3,7 @@ import actions from "../api";
 import MyCalendar from "./profile/MyCalendar";
 import AddATask from "./AddATask";
 import SeeTask from "./SeeTask.js";
+
 import { Link } from "react-router-dom";
 import Fullcalendar from "./Fullcalendar";
 
@@ -10,6 +11,7 @@ function GoalDetails(props) {
   const [goalDetail, setGoalDetail] = useState([]);
   const [tasks, setTasks] = useState([]);
   const [open, setOpen] = useState(false);
+
   // put goal id in url
   // display details on individual page
 
