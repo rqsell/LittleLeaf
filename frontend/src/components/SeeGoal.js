@@ -6,18 +6,17 @@ import swal from "sweetalert";
 import Modal from "react-modal";
 
 function SeeGoal(props) {
-
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [name, setName] = useState("");
   const [start, setStart] = useState("");
   const [end, setEnd] = useState("");
   const [status, setStatus] = useState("");
   const [description, setDescription] = useState("");
-const [index, setIndex] = useState(0)
-const [id, setId] = useState('')
+  const [index, setIndex] = useState(0);
+  const [id, setId] = useState("");
 
   async function handleSubmit(e) {
-    console.log(name, start, end, status, description)
+    console.log(name, start, end, status, description);
     e.preventDefault();
     props.editAGoal({
       name: name,
@@ -26,18 +25,18 @@ const [id, setId] = useState('')
       description,
       status,
       index,
-      id: id
+      id: id,
     });
     console.log("Editing!");
-    setModalIsOpen(false)
+    setModalIsOpen(false);
     // console.log(props);
     // props.history.push("/movies"); // Go back to whatever route you give inside the parentheses
   }
 
-  async function edit(each, i){
-    setModalIsOpen(true)
-    setIndex(i)
-    setId(each._id)
+  async function edit(each, i) {
+    setModalIsOpen(true);
+    setIndex(i);
+    setId(each._id);
   }
 
   const showGoals = () => {
@@ -106,12 +105,7 @@ const [id, setId] = useState('')
                   <option>Complete</option>
                 </select>
                 <br />
-                <button
-                  id="addGoalButton"
-                
-                >
-                  Edit Goal
-                </button>
+                <button id="addGoalButton">Edit Goal</button>
               </form>
             </Modal>
           </div>
