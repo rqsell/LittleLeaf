@@ -49,11 +49,11 @@ function GoalDetails(props) {
         <br></br>
         <h4 class="goalsintro">Add a New Task to Your List!</h4>
       </article>
+      <section className="tanAddGoal">
+        <AddATask {...props} />
 
-      <AddATask {...props} />
-
-      <SeeTask {...props} />
-
+        <SeeTask {...props} />
+      </section>
       {/* <div className="Taskss">{showMyTasks()}</div> */}
       {/**Update end dates onChange of calandar */}
 
