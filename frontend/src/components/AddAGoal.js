@@ -71,7 +71,7 @@ function AddAGoal(props) {
     <div>
       <div className="addAGoalDiv">
         <div className="goalIntro">
-          <article id="introbox">
+          <article id="goalIntroBox">
             <h4 class="goalsintro">Welcome to your Goals page!</h4>
             <span className="goalPageText">
               Each goal you add and complete will take you closer to success!
@@ -80,7 +80,7 @@ function AddAGoal(props) {
               tasks!{" "}
             </span>
             <br></br>
-            <h4 class="goalsintro">Add a New Goal to Your List!</h4>
+            <h4 class="bobby">Add a New Goal to Your List!</h4>
           </article>
         </div>
 

@@ -49,7 +49,7 @@ function GoalDetails(props) {
           {/* in which you will {goalDetail.description} by {goalDetail.endDate} */}
         </span>
         <br></br>
-        <h4 class="goalsintro">Add a New Task to Your List!</h4>
+        <h4 className="bobby">Add a New Task to Your List!</h4>
       </article>
       <section className="tanAddGoal">
         <AddATask {...props} />

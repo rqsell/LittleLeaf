@@ -17,10 +17,10 @@ function LogIn(props){
     }
     return (
         <Fragment>
-            <h2>LogIn</h2>
-            <form onSubmit={handleSubmit}>
-                <input name="email" type="email" onChange={(e)=>setEmail(e.target.value)} />
-                <input name="password" type="password"  onChange={(e)=>setPassword(e.target.value)} />
+            <h2 className="artimus">Log-In</h2>
+            <form onSubmit={handleSubmit} className="artimusCousin">
+                <input name="email" type="email" placeholder="Email" onChange={(e)=>setEmail(e.target.value)} />
+                <input name="password" type="password" placeholder="Password" onChange={(e)=>setPassword(e.target.value)} />
                 <input type="submit" value="Log In"/>
             </form>
         </Fragment>
