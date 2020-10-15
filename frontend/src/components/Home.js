@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { slide as Menu } from "react-burger-menu";
 import actions from "../api/index";
 
 const Home = (props) => {
   const [open, setOpen] = useState(false);
-
+// hi
   return (
     <div>
       {/* <div className="textInHeader">

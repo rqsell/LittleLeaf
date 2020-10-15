@@ -8,23 +8,7 @@
     "preinstall": "echo --- preinstall --- && cd backend && npm install && cd ../frontend && npm install && npm run build && cd ..",
     "start": "echo --- start --- && cd backend && npm start"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Tzikas/IronPlate.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Tzikas/IronPlate/issues"
-  },
-  "homepage": "https://github.com/Tzikas/IronPlate#readme",
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.15.1",
-    "@fullcalendar/bootstrap": "^5.3.1",
-    "@fullcalendar/core": "^5.3.1",
-    "bootstrap": "^4.5.3",
-    "react-bootstrap": "^1.3.0",
-    "react-burger-menu": "^2.8.0",
-    "react-router-dom": "^5.2.0"
+    "react-burger-menu": "^2.9.0"
   }
 }
