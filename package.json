@@ -9,6 +9,7 @@
     "start": "echo --- start --- && cd backend && npm start"
   },
   "dependencies": {
-    "react-burger-menu": "^2.9.0"
+    "react-burger-menu": "^2.9.0",
+    "react-modal": "^3.11.2"
   }
 }

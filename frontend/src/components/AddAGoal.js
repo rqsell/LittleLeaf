@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 // import axios from "axios";
 // import Button from "react-bootstrap/Button";
 // import Dropdown from "react-bootstrap/Dropdown";
@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import lilTree from "../public/images/Copy of Little Leaf Big Tree Logo.png";
 import actions from "../api";
 import SeeGoal from "./SeeGoal";
+import swal from 'sweetalert';
 // import SweetAlert from 'react-bootstrap-sweetalert';
 
 function AddAGoal(props) {
@@ -16,7 +17,19 @@ function AddAGoal(props) {
   const [description, setDescription] = useState("");
   const [status, setStatus] = useState("");
   const [open, setOpen] = useState(false);
-
+  const [goals, setGoals] = useState([]);
+  useEffect(() => {
+    async function getGoals() {
+      let res = await actions.getAllGoals();
+      if (res) {
+        console.log(res);
+        setGoals(res.data.goals);
+      } else {
+        {swal("Sign your butt in!")}
+      }
+    }
+    getGoals();
+  }, []);
   async function handleSubmit(e) {
     e.preventDefault();
     // let res = await axios.post(`http://localhost:5000/api/AddAGoal`, {
@@ -30,8 +43,28 @@ function AddAGoal(props) {
       status,
     });
     console.log(res);
+    
+    let updatedGoals = [...goals]
+    updatedGoals.unshift(res.data.goal)
+    console.log(updatedGoals)
+    setGoals(updatedGoals)
     // console.log(props);
     // props.history.push("/movies"); // Go back to whatever route you give inside the parentheses
+  }
+  async function deleteTheGoal(id, i){
+   let res = await  actions.DeleteAPost(id)
+   let updatedGoals = [...goals]
+   updatedGoals.splice(i, 1)
+  setGoals(updatedGoals)
+  }
+
+  async function editAGoal(data){
+    let res = await actions.EditAPost(data);
+    let index = data.index
+    console.log(res)
+    let updatedGoals = [...goals]
+    updatedGoals.splice(index, 1, data)
+    setGoals(updatedGoals)
   }
 
   return (
@@ -97,7 +130,7 @@ function AddAGoal(props) {
             <button id="addGoalButton">Add Goal</button>
           </form>
           <p className="seeGoalP">
-            <SeeGoal />
+            <SeeGoal goals={goals} deleteTheGoal={deleteTheGoal} editAGoal={editAGoal}/>
           </p>
         </section>
       </div>
