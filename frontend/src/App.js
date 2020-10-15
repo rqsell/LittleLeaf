@@ -12,7 +12,7 @@ import AddAGoal from "./components/AddAGoal";
 import actions from "./api/index";
 import GoogleAuth from "./components/auth/GoogleAuth";
 import GoogleAuthLogin from "./components/auth/GoogleAuthLogin";
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 import AddATask from "./components/AddATask";
 import MyCalendar from "./components/profile/MyCalendar";
 import {
@@ -37,7 +37,7 @@ const App = () => {
   const history = useHistory();
   return (
     <TheContext.Provider value={{ history, user, setUser }}>
-    {user?.email}
+      {user?.email}
       <nav>
         <img
           src="./images/Copy of Little Leaf Big Tree Logo.png"
@@ -72,7 +72,7 @@ const App = () => {
         <br />
         <h4 className="title2">big tree</h4>
       </div>
-      
+
       <Switch>
         <Route exact path="/" render={(props) => <Home {...props} />} />
         <Route
