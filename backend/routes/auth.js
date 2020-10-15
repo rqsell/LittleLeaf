@@ -158,7 +158,7 @@ function isAuth(req, res, next) {
 
 // Verify Token
 function verifyToken(req, res, next) {
-  console.log("verify");
+  console.log(req.headers, "hockeypuck");
   // Get auth header value
   const bearerHeader = req.headers["authorization"];
   // Check if bearer is undefined
@@ -172,6 +172,7 @@ function verifyToken(req, res, next) {
     // Next middleware
     next();
   } else {
+    console.log(req.headers, " octopus")
     // Forbidden
     res.status(403); //.json({err:'not logged in'});
   }

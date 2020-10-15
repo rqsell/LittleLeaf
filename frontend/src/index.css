@@ -212,6 +212,7 @@ body {
   display: flex;
   flex-direction: column;
   margin-top: -10vh;
+  width: 50vw;
 }
 .vanillaForm label {
   font-family: "Open Sans", sans-serif;
@@ -251,41 +252,28 @@ body {
   justify-content: center;
   align-items: center;
 }
+.tanAddGoal {
+  display: flex;
+  flex-direction: row;
+}
+.seeGoalP {
+  margin-top: 35px;
+}
 
 /* ADD A GOAL STYLES */
 .addAGoalDiv {
   margin-top: -50px;
-}
-
-/* GOAL DETAILS STYLES */
-.eachGoalName {
-  color: rgb(77, 92, 77);
-  list-style: none;
-  text-align: center;
-}
-.eachGoalDes {
-  color: rgb(114, 141, 114);
   text-align: center;
 }
 .goalsintro {
-  display: flex;
+  text-align: center;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
   font-family: "Open Sans", sans-serif;
 }
-.goalsHere {
-  text-align: center;
-  font-family: "Open Sans", sans-serif;
-}
-/* .goalsBio {
-  text-align: center;
-  font-family: "Open Sans", sans-serif;
-  font-size: 12px;
-  width: 70vw;
-  border: 3px solid red;
-} */
-
 #introbox {
+  text-align: center;
   margin-left: 20vw;
   display: flex;
   flex-direction: column;
@@ -295,7 +283,7 @@ body {
   /* border: 3px solid black; */
 }
 #introbox2 {
-  margin-left: 20vw;
+  margin-lefxt: 20vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -308,6 +296,36 @@ body {
   color: rgb(77, 92, 77);
   font-weight: 800;
 }
+
+/* GOAL DETAILS STYLES */
+.eachGoalName {
+  color: rgb(77, 92, 77);
+  list-style: none;
+  text-align: center;
+}
+.eachGoalDes {
+  color: rgb(114, 141, 114);
+  text-align: center;
+}
+
+.goalsHere {
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+}
+/* .goalsBio {
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
+  width: 70vw;
+  border: 3px solid red;
+} */
+.seeTaskDiv {
+  text-align: center;
+}
+.showingTasks {
+  list-style: none;
+}
+
 .taskArticle {
   display: flex;
   list-style: none;

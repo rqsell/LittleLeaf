@@ -34,12 +34,13 @@ function SeeTask(props) {
     });
   };
   return (
-    <div>
+    <div className="seeTaskDiv">
       <h1>Tasks</h1>
       {/* <AddATask /> */}
-      {showTasks()}
-      {/* <Link to={`/tasks/${tasks._id}`}> */}
-
+      <div className="showingTasks">
+        {showTasks()}
+        {/* <Link to={`/tasks/${tasks._id}`}> */}
+      </div>
       {/* </Link> */}
     </div>
   );
