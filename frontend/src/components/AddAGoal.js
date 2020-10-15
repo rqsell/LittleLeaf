@@ -60,24 +60,28 @@ function AddAGoal(props) {
             <input
               onChange={(e) => setName(e.target.value)}
               type="text"
+              required
               name="Name"
             />
             <label for="Start Date">Goal Start Date </label>
             <input
               onChange={(e) => setStart(e.target.value)}
               type="date"
+              required
               name="Start"
             />
             <label for="End Date">Goal Due Date</label>
             <input
               onChange={(e) => setEnd(e.target.value)}
               type="date"
+              required
               name="End"
             />
             <label for="Description">Description</label>
             <input
               onChange={(e) => setDescription(e.target.value)}
               type="text"
+              required
               name="Description"
             />
             <br />
