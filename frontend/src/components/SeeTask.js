@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import AddATask from "./AddATask";
 import actions from "../api";
+import swal from '@sweetalert/with-react'
+
 function SeeTask(props) {
   const [tasks, setTasks] = useState([]);
 
@@ -29,7 +31,7 @@ function SeeTask(props) {
         <div>
           <li class="eachTaskName">Task: {eachTask.name}</li>
           <p class="eachTaskDes">Description: {eachTask.description}</p>
-          </div>
+        </div>
       )
     });
   };
