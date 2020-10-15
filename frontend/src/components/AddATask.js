@@ -26,6 +26,14 @@ function AddATask(props) {
     updatedTasks.splice(index, 1, data);
     setTasks(updatedTasks);
   }
+
+  async function deleteTheTask(id, i) {
+    let res = await actions.DeleteAPost(id)
+    let updatedTasks = [...tasks]
+    updatedTasks.splice(i, 1)
+    setTasks(updatedTasks)
+  }
+
   useEffect(() => {
     async function getTasks() {
       console.log(props.match.params.goalid, " debug 1");
@@ -113,7 +121,7 @@ function AddATask(props) {
           <br />
           <button id="addGoalButton">Add Task</button>
         </form>
-        <SeeTask {...props} tasks={tasks} editATask={editATask} />
+        <SeeTask {...props} tasks={tasks} deleteTheTask={deleteTheTask} editATask={editATask} />
       </section>
     </div>
   );

@@ -79,6 +79,23 @@ router.post("/DeleteAPost", verifyToken, (req, res) => {
     }
   });
 });
+router.post("/DeleteAPost", verifyToken, (req, res) => {
+  jwt.verify(req.token, "secretkey", (err, authData) => {
+    if (err) {
+      res.status(403).json(err);
+    } else {
+      // res.status(200).json(authData.user)
+      // console.log(authData.user, "yolo");
+      console.log(req.body);
+      let task = req.body.id;
+      // goal.userId = authData.user._id;
+      Tasks.findByIdAndDelete(task).then((task) => {
+        console.log("post deleted!");
+        res.json({ task });
+      });
+    }
+  });
+});
 router.post("/EditAPost", verifyToken, (req, res) => {
   jwt.verify(req.token, "secretkey", (err, authData) => {
     if (err) {
