@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import AddATask from "./AddATask";
 import actions from "../api";
-import swal from 'sweetalert'
+import swal from "sweetalert";
 
 function SeeTask(props) {
   const [tasks, setTasks] = useState([]);
@@ -18,7 +18,9 @@ function SeeTask(props) {
         console.log("kittens");
         setTasks(res.data.tasks);
       } else {
-        { swal("Sign your butt in!") }
+        {
+          swal("Sign your butt in!");
+        }
       }
     }
     getTasks();
