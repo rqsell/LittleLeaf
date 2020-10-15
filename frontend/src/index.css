@@ -140,6 +140,10 @@
 .bodyTextP1 {
   font-size: 14px;
 }
+.buttonbox {
+  display: flex;
+  justify-content: space-evenly;
+}
 .bodyTextP2 {
   font-size: 14px;
 }
@@ -228,6 +232,24 @@ body {
   width: 25vw;
   border-radius: 2%;
   border: black solid 1px;
+  font-family: "Open Sans", sans-serif;
+  color: rgb(77, 92, 77);
+  background-color: darkseagreen;
+}
+#deletepost {
+  width: 10vw;
+  border-radius: 2%;
+  border: black solid 1px;
+  font-family: "Open Sans", sans-serif;
+  color: rgb(77, 92, 77);
+  background-color: darkseagreen;
+  margin-right: 2%;
+}
+.goaldesc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /* ADD A GOAL STYLES */
