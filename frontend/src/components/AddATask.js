@@ -73,7 +73,7 @@ function AddATask(props) {
   }
   return (
     <div>
-      <section className="tanAddGoal">
+      <section className="tangent">
         <form
           onSubmit={handleSubmit}
           style={{ padding: "80px" }}
