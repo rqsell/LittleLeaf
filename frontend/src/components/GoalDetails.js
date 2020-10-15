@@ -54,7 +54,7 @@ function GoalDetails(props) {
       <section className="tanAddGoal">
         <AddATask {...props} />
 
-        <SeeTask {...props} />
+        {/* <SeeTask {...props} /> */}
       </section>
       {/* <div className="Taskss">{showMyTasks()}</div> */}
       {/**Update end dates onChange of calandar */}

@@ -87,9 +87,10 @@ router.post("/EditAPost", verifyToken, (req, res) => {
       // res.status(200).json(authData.user)
       // console.log(authData.user, "yolo");
       console.log(req.body);
-      let goal = req.body.id;
+      let id = req.body.id;
+      delete req.body.id
       // goal.userId = authData.user._id;
-      Goals.findByIdAndUpdate(goal).then((goal) => {
+      Goals.findByIdAndUpdate(id, req.body).then((goal) => {
         console.log("post edited!!");
         res.json({ goal });
       });

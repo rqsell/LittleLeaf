@@ -6,43 +6,42 @@ import swal from "sweetalert";
 import Modal from "react-modal";
 
 function SeeGoal(props) {
-  const [goals, setGoals] = useState([]);
+
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [name, setName] = useState("");
   const [start, setStart] = useState("");
   const [end, setEnd] = useState("");
   const [status, setStatus] = useState("");
   const [description, setDescription] = useState("");
-  useEffect(() => {
-    async function getGoals() {
-      let res = await actions.getAllGoals();
-      if (res) {
-        console.log(res);
-        setGoals(res.data.goals);
-      } else {
-        {
-          swal("Sign your butt in!");
-        }
-      }
-    }
-    getGoals();
-  }, []);
+const [index, setIndex] = useState(0)
+const [id, setId] = useState('')
 
   async function handleSubmit(e) {
+    console.log(name, start, end, status, description)
     e.preventDefault();
-    let res = await actions.EditAPost({
+    props.editAGoal({
       name: name,
-      start: start,
-      end,
+      startDate: start,
+      endDate: end,
       description,
       status,
+      index,
+      id: id
     });
     console.log("Editing!");
+    setModalIsOpen(false)
     // console.log(props);
     // props.history.push("/movies"); // Go back to whatever route you give inside the parentheses
   }
+
+  async function edit(each, i){
+    setModalIsOpen(true)
+    setIndex(i)
+    setId(each._id)
+  }
+
   const showGoals = () => {
-    return goals.map((eachGoal) => {
+    return props.goals.map((eachGoal, i) => {
       return (
         <div className="goaldesc">
           <Link to={`/goals/${eachGoal._id}`}>
@@ -53,11 +52,11 @@ function SeeGoal(props) {
           <div className="buttonbox">
             <button
               id="deletepost"
-              onClick={() => actions.DeleteAPost(eachGoal._id)}
+              onClick={() => props.deleteTheGoal(eachGoal._id, i)}
             >
               Delete!
             </button>
-            <button id="deletepost" onClick={() => setModalIsOpen(true)}>
+            <button id="deletepost" onClick={() => edit(eachGoal, i)}>
               {" "}
               Edit
             </button>
@@ -109,7 +108,7 @@ function SeeGoal(props) {
                 <br />
                 <button
                   id="addGoalButton"
-                  onClick={() => setModalIsOpen(!modalIsOpen)}
+                
                 >
                   Edit Goal
                 </button>
