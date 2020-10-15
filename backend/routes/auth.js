@@ -79,6 +79,42 @@ router.post("/DeleteAPost", verifyToken, (req, res) => {
     }
   });
 });
+router.post("/EditAPost", verifyToken, (req, res) => {
+  jwt.verify(req.token, "secretkey", (err, authData) => {
+    if (err) {
+      res.status(403).json(err);
+    } else {
+      // res.status(200).json(authData.user)
+      // console.log(authData.user, "yolo");
+      console.log(req.body);
+      let id = req.body.id;
+      delete req.body.id;
+      // goal.userId = authData.user._id;
+      Goals.findByIdAndUpdate(id, req.body).then((goal) => {
+        console.log("post edited!!");
+        res.json({ goal });
+      });
+    }
+  });
+});
+router.post("/EditATask", verifyToken, (req, res) => {
+  jwt.verify(req.token, "secretkey", (err, authData) => {
+    if (err) {
+      res.status(403).json(err);
+    } else {
+      // res.status(200).json(authData.user)
+      // console.log(authData.user, "yolo");
+      console.log(req.body);
+      let id = req.body.id;
+      delete req.body.id;
+      // goal.userId = authData.user._id;
+      Goals.findByIdAndUpdate(id, req.body).then((goal) => {
+        console.log("WILLOW WUZ HERE BORQ BORQ");
+        res.json({ goal });
+      });
+    }
+  });
+});
 router.post("/AddTaskDB", verifyToken, (req, res) => {
   jwt.verify(req.token, "secretkey", (err, authData) => {
     if (err) {
@@ -172,7 +208,7 @@ function verifyToken(req, res, next) {
     // Next middleware
     next();
   } else {
-    console.log(req.headers, " octopus")
+    console.log(req.headers, " octopus");
     // Forbidden
     res.status(403); //.json({err:'not logged in'});
   }
