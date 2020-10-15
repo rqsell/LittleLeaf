@@ -57,6 +57,9 @@ const actions = {
   EditAPost: async (data) => {
     return await API.post("/EditAPost", data, resetHead());
   },
+  EditATask: async (data) => {
+    return await API.post("/EditAPost", data, resetHead());
+  },
   getAllGoals: async (goal) => {
     return await API.get(`/GetAllGoal`, resetHead());
   },
