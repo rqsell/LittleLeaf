@@ -29,13 +29,13 @@ function SeeTask(props) {
         <div>
           <li class="eachTaskName">Task: {eachTask.name}</li>
           <p class="eachTaskDes">Description: {eachTask.description}</p>
-          </div>
-      )
+        </div>
+      );
     });
   };
   return (
-    <div className="seeTaskDiv">
-      <h1>Tasks</h1>
+    <div>
+      <h5 className="goalsHere"> Here we have listed your tasks</h5>
       {/* <AddATask /> */}
       <div className="showingTasks">
         {showTasks()}
