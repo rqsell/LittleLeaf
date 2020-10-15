@@ -64,13 +64,14 @@ function SeeTask(props) {
       console.log(eachTask);
       return (
         <div className="goaldesc">
+        <br/>
           <li className="eachGoalName">Task: {eachTask.name}</li>
-          <p className="eachGoalDes">Description: {eachTask.description}</p>
+          <li className="eachGoalDes">Description: {eachTask.description}</li>
 
           <div className="buttonbox">
             <button id="deletepost" onClick={() => props.deleteTheTask(eachTask._id, i)}>Delete!</button>
             <button id="deletepost" onClick={() => edit(eachTask, i)}>
-              {" "}
+              
               Edit
             </button>
             <Modal isOpen={modalIsOpen}>
@@ -129,6 +130,7 @@ function SeeTask(props) {
   };
   return (
     <div>
+    <br/>
       <h5 className="goalsHere"> Here we have listed your tasks</h5>
       {/* <AddATask /> */}
       <div className="showingTasks">

@@ -112,11 +112,12 @@ function AddAGoal(props) {
               name="End"
             />
             <label for="Description">Description</label>
-            <input
+            <textarea
               onChange={(e) => setDescription(e.target.value)}
-              type="text"
+              type="textarea"
               required
               name="Description"
+              id="descriptBox"
             />
             <br />
             {/* <label>Set Status</label> */}
