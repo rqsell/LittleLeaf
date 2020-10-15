@@ -28,49 +28,51 @@ function AddATask(props) {
   }
   return (
     <div>
-      <form
-        onSubmit={handleSubmit}
-        style={{ padding: "80px" }}
-        class="vanillaForm"
-      >
-        <label for="Name">Task Name</label>
-        <input
-          onChange={(e) => setName(e.target.value)}
-          type="text"
-          name="Name"
-        />
+      <section className="tanAddGoal">
+        <form
+          onSubmit={handleSubmit}
+          style={{ padding: "80px" }}
+          class="vanillaForm"
+        >
+          <label for="Name">Task Name</label>
+          <input
+            onChange={(e) => setName(e.target.value)}
+            type="text"
+            name="Name"
+          />
 
-        <label for="Start Date">Task Start Date </label>
-        <input
-          onChange={(e) => setStart(e.target.value)}
-          type="date"
-          name="Start"
-        />
+          <label for="Start Date">Task Start Date </label>
+          <input
+            onChange={(e) => setStart(e.target.value)}
+            type="date"
+            name="Start"
+          />
 
-        <label for="End Date">Task Due Date</label>
-        <input
-          onChange={(e) => setEnd(e.target.value)}
-          type="date"
-          name="End"
-        />
+          <label for="End Date">Task Due Date</label>
+          <input
+            onChange={(e) => setEnd(e.target.value)}
+            type="date"
+            name="End"
+          />
 
-        <label for="Description">Description</label>
-        <input
-          onChange={(e) => setDescription(e.target.value)}
-          type="text"
-          name="Description"
-        />
-        <br />
-        {/* <label>Set Status</label> */}
-        <select name="status" onChange={(e) => setStatus(e.target.value)}>
-          <option>Set Status...</option>
-          <option>Incomplete</option>
-          <option>In Progress</option>
-          <option>Complete</option>
-        </select>
-        <br />
-        <button id="addGoalButton">Add Task</button>
-      </form>
+          <label for="Description">Description</label>
+          <input
+            onChange={(e) => setDescription(e.target.value)}
+            type="text"
+            name="Description"
+          />
+          <br />
+          {/* <label>Set Status</label> */}
+          <select name="status" onChange={(e) => setStatus(e.target.value)}>
+            <option>Set Status...</option>
+            <option>Incomplete</option>
+            <option>In Progress</option>
+            <option>Complete</option>
+          </select>
+          <br />
+          <button id="addGoalButton">Add Task</button>
+        </form>
+      </section>
     </div>
   );
 }

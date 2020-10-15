@@ -36,90 +36,87 @@ const App = () => {
   };
   const history = useHistory();
   return (
-    <div>
-      <TheContext.Provider value={{ history, user, setUser }}>
-        {user?.email}
-        <nav>
-          <img
-            src="./images/Copy of Little Leaf Big Tree Logo.png"
-            alt="our logo"
-            id={open ? "clickedlogo" : ""}
-            class="logo"
-            onClick={() => setOpen(!open)}
-          />
+    <TheContext.Provider value={{ history, user, setUser }}>
+      {user?.email}
+      <nav>
+        <img
+          src="./images/Copy of Little Leaf Big Tree Logo.png"
+          alt="our logo"
+          id={open ? "clickedlogo" : ""}
+          class="logo"
+          onClick={() => setOpen(!open)}
+        />
 
-          <ul className="hamburgerMenu" id={open ? "clickedmenu" : ""}>
-            <div className="x" onClick={() => setOpen(!open)}>
-              X
-            </div>
-            <Link to="/" style={{ textDecoration: "none" }}>
-              <li>Home</li>
-            </Link>
-            <Link to="/AddAGoal" style={{ textDecoration: "none" }}>
-              <li>Add a Goal</li>
-            </Link>
-            <Link to="/MyCalendar" style={{ textDecoration: "none" }}>
-              <li>My Calendar</li>
-            </Link>
-            <Link to="/log-in" style={{ textDecoration: "none" }}>
-              <li>Log In/Sign Up</li>
-            </Link>
-          </ul>
-        </nav>
+        <ul className="hamburgerMenu" id={open ? "clickedmenu" : ""}>
+          <div className="x" onClick={() => setOpen(!open)}>
+            X
+          </div>
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <li>Home</li>
+          </Link>
+          <Link to="/AddAGoal" style={{ textDecoration: "none" }}>
+            <li>Add a Goal</li>
+          </Link>
+          <Link to="/MyCalendar" style={{ textDecoration: "none" }}>
+            <li>My Calendar</li>
+          </Link>
+          <Link to="/log-in" style={{ textDecoration: "none" }}>
+            <li>Log In/Sign Up</li>
+          </Link>
+        </ul>
+      </nav>
 
-        <div className="textInHeader">
-          <h3 className="title1">little leaf</h3>
-          <br />
-          <br />
-          <h4 className="title2">big tree</h4>
-        </div>
-        <Switch>
-          <Route exact path="/" render={(props) => <Home {...props} />} />
-          <Route
-            exact
-            path="/sign-up"
-            render={(props) => <SignUp {...props} setUser={setUser} />}
-          />
-          <Route
-            exact
-            path="/log-in"
-            render={(props) => <LogIn {...props} setUser={setUser} />}
-          />
-          <Route
-            exact
-            path="/profile"
-            render={(props) => <Profile {...props} />}
-          />
-          <Route
-            exact
-            path="/AddAGoal"
-            render={(props) => <AddAGoal {...props} />}
-          />
-          <Route
-            exact
-            path="/goals/:goalid"
-            render={(props) => <GoalDetails {...props} />}
-          />
-          <Route
-            exact
-            path="/AddATask"
-            render={(props) => <AddATask {...props} />}
-          />
-          <Route
-            exact
-            path="/MyCalendar"
-            render={(props) => <MyCalendar {...props} />}
-          />
-        </Switch>
-        <div id="google-auth">
-          {!user && <GoogleAuth setUser={setUser} className="googleAuth" />}
-          {!user && (
-            <GoogleAuthLogin setUser={setUser} className="googleAuth" />
-          )}
-        </div>
-        <NotificationContainer />
-      </TheContext.Provider>
-    </div>
+      <div className="textInHeader">
+        <h3 className="title1">little leaf</h3>
+        <br />
+        <br />
+        <h4 className="title2">big tree</h4>
+      </div>
+
+      <Switch>
+        <Route exact path="/" render={(props) => <Home {...props} />} />
+        <Route
+          exact
+          path="/sign-up"
+          render={(props) => <SignUp {...props} setUser={setUser} />}
+        />
+        <Route
+          exact
+          path="/log-in"
+          render={(props) => <LogIn {...props} setUser={setUser} />}
+        />
+        <Route
+          exact
+          path="/profile"
+          render={(props) => <Profile {...props} />}
+        />
+        <Route
+          exact
+          path="/AddAGoal"
+          render={(props) => <AddAGoal {...props} />}
+        />
+        <Route
+          exact
+          path="/goals/:goalid"
+          render={(props) => <GoalDetails {...props} />}
+        />
+        <Route
+          exact
+          path="/AddATask"
+          render={(props) => <AddATask {...props} />}
+        />
+        <Route
+          exact
+          path="/MyCalendar"
+          render={(props) => <MyCalendar {...props} />}
+        />
+      </Switch>
+      <div id="google-auth">
+        {!user && <GoogleAuth setUser={setUser} className="googleAuth" />}
+        {!user && <GoogleAuthLogin setUser={setUser} className="googleAuth" />}
+      </div>
+      <NotificationContainer />
+    </TheContext.Provider>
   );
 };
 export default App;

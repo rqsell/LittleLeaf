@@ -26,9 +26,14 @@ function SeeTask(props) {
     return tasks?.map((eachTask) => {
       console.log(eachTask);
       return (
-        <div>
-          <li class="eachTaskName">Task: {eachTask.name}</li>
-          <p class="eachTaskDes">Description: {eachTask.description}</p>
+        <div className="goaldesc">
+          <li className="eachGoalName">Task: {eachTask.name}</li>
+          <p className="eachGoalDes">Description: {eachTask.description}</p>
+
+          <div className="buttonbox">
+            <button id="deletepost">Delete!</button>
+            <button id="deletepost"> Edit</button>
+          </div>
         </div>
       );
     });
