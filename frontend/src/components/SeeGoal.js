@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import actions from "../api";
 import GoalDetail from "./GoalDetails";
-// import swal from '@sweetalert/with-react'
+import swal from 'sweetalert'
 
 function SeeGoal(props) {
   const [goals, setGoals] = useState([]);
@@ -14,13 +14,15 @@ function SeeGoal(props) {
         console.log(res);
         setGoals(res.data.goals);
       } else {
-        alert("res is undefined. Sign your butt in!");
+        { swal("Sign your butt in!") }
       }
     }
     getGoals();
   }, []);
 
   const showGoals = () => {
+
+
     return goals.map((eachGoal) => {
       return (
         <div className="goaldesc">
