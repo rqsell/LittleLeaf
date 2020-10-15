@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import lilTree from "../public/images/Copy of Little Leaf Big Tree Logo.png";
 import actions from "../api";
 import SeeGoal from "./SeeGoal";
+// import SweetAlert from 'react-bootstrap-sweetalert';
 
 function AddAGoal(props) {
   const [name, setName] = useState("");

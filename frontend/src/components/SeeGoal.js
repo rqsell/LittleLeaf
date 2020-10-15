@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import actions from "../api";
 import GoalDetail from "./GoalDetails";
+import swal from "sweetalert";
 import Modal from "react-modal";
 
 function SeeGoal(props) {
@@ -35,6 +36,8 @@ function SeeGoal(props) {
       status,
     });
     console.log("Editing!");
+    // console.log(props);
+    // props.history.push("/movies"); // Go back to whatever route you give inside the parentheses
   }
   const showGoals = () => {
     return goals.map((eachGoal) => {

@@ -19,6 +19,9 @@ import {
   NotificationContainer,
   NotificationManager,
 } from "react-notifications";
+
+
+
 const App = () => {
   let [user, setUser] = useState(null);
   const [open, setOpen] = useState(false);
@@ -36,6 +39,7 @@ const App = () => {
   };
   const history = useHistory();
   return (
+    <div>
     <TheContext.Provider value={{ history, user, setUser }}>
       {user?.email}
       <nav>
@@ -117,6 +121,7 @@ const App = () => {
       </div>
       <NotificationContainer />
     </TheContext.Provider>
+    </div>
   );
 };
 export default App;

@@ -2,9 +2,13 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import actions from "../api/index";
 
+
 const Home = (props) => {
   const [open, setOpen] = useState(false);
-// hi
+  // hi
+
+  // { swal("Sign your butt in!") }
+
   return (
     <div>
       {/* <div className="textInHeader">
