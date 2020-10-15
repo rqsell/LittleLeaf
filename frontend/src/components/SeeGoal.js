@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import actions from "../api";
 import GoalDetail from "./GoalDetails";
+import swal from '@sweetalert/with-react'
 
 function SeeGoal(props) {
   const [goals, setGoals] = useState([]);
