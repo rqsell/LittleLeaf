@@ -18,7 +18,6 @@ function SeeTask(props) {
 
   async function handleSubmit(e) {
     console.log(name, start, end, status, description);
-
     e.preventDefault();
     props.editATask({
       name: name,
@@ -69,7 +68,7 @@ function SeeTask(props) {
           <p className="eachGoalDes">Description: {eachTask.description}</p>
 
           <div className="buttonbox">
-            <button id="deletepost">Delete!</button>
+            <button id="deletepost" onClick={() => props.deleteTheTask(eachTask._id, i)}>Delete!</button>
             <button id="deletepost" onClick={() => edit(eachTask, i)}>
               {" "}
               Edit
