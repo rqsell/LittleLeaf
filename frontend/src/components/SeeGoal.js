@@ -20,7 +20,9 @@ function SeeGoal(props) {
         console.log(res);
         setGoals(res.data.goals);
       } else {
-        alert("res is undefined. Sign your butt in!");
+        {
+          swal("Sign your butt in!");
+        }
       }
     }
     getGoals();
