@@ -54,8 +54,8 @@ const actions = {
   DeleteAPost: async (id) => {
     return await API.post("/DeleteAPost", { id }, resetHead());
   },
-  EditAPost: async (id) => {
-    return await API.post("/EditAPost", { id }, resetHead());
+  EditAPost: async (data) => {
+    return await API.post("/EditAPost", data, resetHead());
   },
   getAllGoals: async (goal) => {
     return await API.get(`/GetAllGoal`, resetHead());

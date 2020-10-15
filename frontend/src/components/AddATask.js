@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 // import Dropdown from "react-bootstrap/Dropdown";
 import actions from "../api";
+import SeeTask from "./SeeTask"
+import swal from 'sweetalert';
 
 function AddATask(props) {
   const [name, setName] = useState("");
@@ -10,7 +12,28 @@ function AddATask(props) {
   const [description, setDescription] = useState("");
   const [status, setStatus] = useState("");
   const [open, setOpen] = useState(false);
-  console.log(props);
+
+  const [tasks, setTasks] = useState([]);
+
+  useEffect(() => {
+    async function getTasks() {
+      console.log(props.match.params.goalid, " debug 1");
+      let res = await actions.getAllTasks({
+        goalid: props.match.params.goalid,
+      });
+      if (res) {
+        console.log(res);
+        console.log("kittens");
+        setTasks(res.data.tasks);
+      } else {
+        {
+          swal("Sign your butt in!");
+        }
+      }
+    }
+    getTasks();
+  }, []);
+
   async function handleSubmit(e) {
     e.preventDefault();
 
@@ -25,6 +48,9 @@ function AddATask(props) {
       status,
     });
     console.log(res);
+    let updatedTasks = [...tasks]
+    updatedTasks.unshift(res.data.task)
+    setTasks(updatedTasks)
   }
   return (
     <div>
@@ -76,7 +102,9 @@ function AddATask(props) {
           <br />
           <button id="addGoalButton">Add Task</button>
         </form>
+        <SeeTask {...props} tasks={tasks}/>
       </section>
+     
     </div>
   );
 }
