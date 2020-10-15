@@ -30,6 +30,21 @@
   top: -90px;
   margin-left: 1.5vw;
 }
+.logo:hover {
+  animation: bounce 0.5s;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(0.5, 0.05, 1, 0.5);
+  animation-iteration-count: infinite;
+}
+
+@keyframes bounce {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 50px, 0);
+  }
+}
 /* GOOGLE AUTH STYLES */
 #google-auth {
   display: flex;
@@ -100,7 +115,6 @@
   /* margin-left: 10vw; */
 }
 
-
 /* BODY STYLES */
 .bodyText {
   margin-top: 30px;
@@ -114,7 +128,6 @@
   color: rgb(77, 92, 77);
   /* color: #ffd24d; */
   /* background: -webkit-linear-gradient( gainsboro, lightyellow) */
- 
 }
 .bodyText h6 {
   font-family: "Baskervville", serif;
@@ -126,6 +139,10 @@
 }
 .bodyTextP1 {
   font-size: 14px;
+}
+.buttonbox {
+  display: flex;
+  justify-content: space-evenly;
 }
 .bodyTextP2 {
   font-size: 14px;
@@ -141,7 +158,6 @@ footer p {
 body {
   font-family: "Open Sans", sans-serif;
 }
-
 
 /* MENU STYLES */
 .x {
@@ -217,27 +233,46 @@ body {
   width: 25vw;
   border-radius: 2%;
   border: black solid 1px;
+  font-family: "Open Sans", sans-serif;
+  color: rgb(77, 92, 77);
+  background-color: darkseagreen;
 }
+<<<<<<< HEAD
 /* !!!!!!!
 !!!!!!!!!!!!!
 keep the changes below! these will allow us to see the form and list of goals
 side by side. we can also reuse this code for the goaldetails page that includes
 the task form and the list of tasks! */
 /* .tanAddGoal{
+=======
+#deletepost {
+  width: 10vw;
+  border-radius: 2%;
+  border: black solid 1px;
+  font-family: "Open Sans", sans-serif;
+  color: rgb(77, 92, 77);
+  background-color: darkseagreen;
+  margin-right: 2%;
+}
+.goaldesc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.tanAddGoal {
+>>>>>>> a7b9e569c0e25bbc831ba8e038441c118605e425
   display: flex;
   flex-direction: row;
 }
-.seeGoalP{
+.seeGoalP {
   margin-top: 35px;
 } */
 
-
-
 /* ADD A GOAL STYLES */
-.addAGoalDiv{
+.addAGoalDiv {
   margin-top: -50px;
   text-align: center;
-
 }
 .goalsintro {
   text-align: center;
@@ -257,7 +292,7 @@ the task form and the list of tasks! */
   /* border: 3px solid black; */
 }
 #introbox2 {
-  margin-lefxt: 20vw;
+  margin-left: 20vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -270,8 +305,6 @@ the task form and the list of tasks! */
   color: rgb(77, 92, 77);
   font-weight: 800;
 }
-
-
 
 /* GOAL DETAILS STYLES */
 .eachGoalName {
@@ -295,15 +328,14 @@ the task form and the list of tasks! */
   width: 70vw;
   border: 3px solid red;
 } */
-.seeTaskDiv{
+.seeTaskDiv {
   text-align: center;
 }
-.showingTasks{
+.showingTasks {
   list-style: none;
 }
 
-
-.taskArticle{
+.taskArticle {
   display: flex;
   list-style: none;
-} 
+}

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import actions from "../api";
 import GoalDetail from "./GoalDetails";
+// import swal from '@sweetalert/with-react'
 
 function SeeGoal(props) {
   const [goals, setGoals] = useState([]);
@@ -22,10 +23,21 @@ function SeeGoal(props) {
   const showGoals = () => {
     return goals.map((eachGoal) => {
       return (
-        <Link to={`/goals/${eachGoal._id}`}>
-          <li className="eachGoalName">Goal: {eachGoal.name}</li>
-          <p className="eachGoalDes">Description: {eachGoal.description}</p>
-        </Link>
+        <div className="goaldesc">
+          <Link to={`/goals/${eachGoal._id}`}>
+            <li className="eachGoalName">Goal: {eachGoal.name}</li>
+            <p className="eachGoalDes">Description: {eachGoal.description}</p>
+          </Link>
+          <div className="buttonbox">
+            <button
+              id="deletepost"
+              onClick={() => actions.DeleteAPost(eachGoal._id)}
+            >
+              Delete!
+            </button>
+            <button id="deletepost"> Edit</button>
+          </div>
+        </div>
       );
     });
   };
