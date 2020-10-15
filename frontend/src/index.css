@@ -230,7 +230,7 @@ body {
   background-color: darkseagreen;
 }
 #addGoalButton {
-  width: 25vw;
+  width: 20vw;
   border-radius: 2%;
   border: black solid 1px;
   font-family: "Open Sans", sans-serif;
@@ -251,6 +251,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  list-style: none;
 }
 .tanAddGoal {
   display: flex;
@@ -267,9 +268,7 @@ body {
 }
 .goalsintro {
   text-align: center;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
+  margin-top: -30px;
   font-family: "Open Sans", sans-serif;
 }
 #introbox {
@@ -329,4 +328,11 @@ body {
 .taskArticle {
   display: flex;
   list-style: none;
+}
+#descriptBox{
+  /* border-color: rgb(114, 141, 114); */
+  border: solid 2px rgb(114, 141, 114);
+}
+#cal{
+  margin: 15px;
 }

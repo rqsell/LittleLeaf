@@ -43,11 +43,13 @@ function SeeGoal(props) {
     return props.goals.map((eachGoal, i) => {
       return (
         <div className="goaldesc">
+        <br/>
           <Link to={`/goals/${eachGoal._id}`}>
             <li className="eachGoalName">Goal: {eachGoal.name}</li>
-            <p className="eachGoalDes">Description: {eachGoal.description}</p>
-            <p className="eachGoalDes">status: {eachGoal.status}</p>
+            <li className="eachGoalDes">Description: {eachGoal.description}</li>
+            <li className="eachGoalDes">Status: {eachGoal.status}</li>
           </Link>
+          
           <div className="buttonbox">
             <button
               id="deletepost"
@@ -59,6 +61,7 @@ function SeeGoal(props) {
               {" "}
               Edit
             </button>
+            
             <Modal isOpen={modalIsOpen}>
               <form
                 onSubmit={handleSubmit}

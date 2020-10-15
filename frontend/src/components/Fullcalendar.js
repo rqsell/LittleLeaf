@@ -12,11 +12,15 @@ export default class DemoApp extends React.Component {
             See your goals and tasks laid organized by your chosen dates!
           </span>
         </article>
+        <br/>
+        <article id="cal">
         <FullCalendar
           plugins={[dayGridPlugin]}
           initialView="dayGridMonth"
           events={this.props.events}
+          
         />
+        </article>
       </div>
     );
   }

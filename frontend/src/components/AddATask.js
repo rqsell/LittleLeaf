@@ -104,11 +104,12 @@ function AddATask(props) {
           />
 
           <label for="Description">Description</label>
-          <input
+          <textarea
             onChange={(e) => setDescription(e.target.value)}
             type="text"
             required
             name="Description"
+            id="descriptBox"
           />
           <br />
           {/* <label>Set Status</label> */}
