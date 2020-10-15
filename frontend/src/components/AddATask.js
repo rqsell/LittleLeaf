@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Dropdown from "react-bootstrap/Dropdown";
+// import Dropdown from "react-bootstrap/Dropdown";
 import actions from "../api";
 
 function AddATask(props) {
@@ -38,6 +38,7 @@ function AddATask(props) {
           <input
             onChange={(e) => setName(e.target.value)}
             type="text"
+            required
             name="Name"
           />
 
@@ -45,6 +46,7 @@ function AddATask(props) {
           <input
             onChange={(e) => setStart(e.target.value)}
             type="date"
+            required
             name="Start"
           />
 
@@ -52,6 +54,7 @@ function AddATask(props) {
           <input
             onChange={(e) => setEnd(e.target.value)}
             type="date"
+            required
             name="End"
           />
 
@@ -59,6 +62,7 @@ function AddATask(props) {
           <input
             onChange={(e) => setDescription(e.target.value)}
             type="text"
+            required
             name="Description"
           />
           <br />
