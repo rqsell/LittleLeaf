@@ -256,6 +256,7 @@ body {
 .tanAddGoal {
   display: flex;
   flex-direction: row;
+  margin-left: 10vw;
 }
 .seeGoalP {
   margin-top: 35px;
