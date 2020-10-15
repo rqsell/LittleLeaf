@@ -218,13 +218,18 @@ body {
   border-radius: 2%;
   border: black solid 1px;
 }
-.tanAddGoal{
+/* !!!!!!!
+!!!!!!!!!!!!!
+keep the changes below! these will allow us to see the form and list of goals
+side by side. we can also reuse this code for the goaldetails page that includes
+the task form and the list of tasks! */
+/* .tanAddGoal{
   display: flex;
   flex-direction: row;
 }
 .seeGoalP{
   margin-top: 35px;
-}
+} */
 
 
 

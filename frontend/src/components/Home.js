@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import actions from "../api/index";
+import swal from 'sweetalert';
 
 const Home = (props) => {
   const [open, setOpen] = useState(false);
 // hi
+
+{swal("Good job!", "You clicked the button!", "success")}
+
   return (
     <div>
       {/* <div className="textInHeader">
@@ -13,7 +17,7 @@ const Home = (props) => {
         <br />
         <h4 className="title2">big tree</h4>
       </div> */}
-
+      
       <div className="homeIntro">
         <h1 id="homeIT1">Let's Grow Together</h1>
         <h2 id="homeIT2">We're here to help you reach your goals!</h2>
