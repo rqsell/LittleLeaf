@@ -19,6 +19,9 @@ import {
   NotificationContainer,
   NotificationManager,
 } from "react-notifications";
+
+
+
 const App = () => {
   let [user, setUser] = useState(null);
   const [open, setOpen] = useState(false);
@@ -37,6 +40,7 @@ const App = () => {
   const history = useHistory();
   return (
     <div>
+    
       {user?.email}
       <nav>
         <img
@@ -112,12 +116,16 @@ const App = () => {
             render={(props) => <MyCalendar {...props} />}
           />
         </Switch>
+
+       
+
         <div id="google-auth">
           {!user && <GoogleAuth setUser={setUser} className="googleAuth" />}
           {!user && (
             <GoogleAuthLogin setUser={setUser} className="googleAuth" />
           )}
         </div>
+
         <NotificationContainer />
       </TheContext.Provider>
     </div>
